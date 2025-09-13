@@ -15,27 +15,32 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 30px;
         }
         
         .ad-card {
             background: white;
-            border-radius: 25px;
-            padding: 40px;
+            border-radius: 30px;
+            padding: 60px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            max-width: 550px;
+            min-height: 700px;
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         .ad-card::before {
             content: '';
             position: absolute;
-            top: -50px;
-            right: -50px;
-            width: 150px;
-            height: 150px;
+            top: -80px;
+            right: -80px;
+            width: 200px;
+            height: 200px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             z-index: 0;
@@ -44,137 +49,187 @@
         .ad-card::after {
             content: '';
             position: absolute;
-            bottom: -50px;
-            left: -50px;
-            width: 150px;
-            height: 150px;
+            bottom: -80px;
+            left: -80px;
+            width: 200px;
+            height: 200px;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             z-index: 0;
         }
         
         .icon {
-            font-size: 5rem;
+            font-size: 6rem;
             color: #764ba2;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
         
         .title {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: #333;
             margin-bottom: 15px;
             font-weight: 700;
             line-height: 1.3;
+            letter-spacing: -0.5px;
         }
         
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: #666;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
             font-weight: 500;
+            line-height: 1.5;
         }
         
         .date {
             background: #f0f8ff;
             color: #667eea;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-size: 1.2rem;
+            padding: 14px 28px;
+            border-radius: 35px;
+            font-size: 1.3rem;
             display: inline-block;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-weight: 600;
-            border: 1px solid #e1e8ff;
+            border: 1.5px solid #e1e8ff;
         }
         
         .channel-name {
             background: #e3f2fd;
             color: #1976d2;
-            padding: 12px 25px;
-            border-radius: 30px;
-            font-size: 1.3rem;
+            padding: 14px 30px;
+            border-radius: 35px;
+            font-size: 1.4rem;
             font-weight: 700;
-            margin: 20px auto;
+            margin: 25px auto;
             display: inline-block;
-            border: 1px dashed #90caf9;
+            border: 1.5px dashed #90caf9;
             letter-spacing: 1px;
+            min-width: 250px;
         }
         
         .instructions {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #555;
-            margin: 25px 0;
-            line-height: 1.6;
-            padding: 15px;
+            margin: 30px 0;
+            line-height: 1.8;
+            padding: 20px;
             background: #fffaf7;
-            border-radius: 15px;
-            border-left: 4px solid #ff6b6b;
+            border-radius: 18px;
+            border-left: 5px solid #ff6b6b;
+            text-align: right;
         }
         
-        .qr-container {
-            margin: 25px auto;
+        .buttons-container {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 10px;
+            gap: 15px;
+            margin: 30px 0;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
-        .qr-code {
-            width: 150px;
-            height: 150px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 5px;
-            background: white;
+        .subscribe-button {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+            border: none;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            min-width: 220px;
         }
         
-        .qr-label {
-            font-size: 0.95rem;
-            color: #555;
-            font-weight: 600;
+        .subscribe-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
+        }
+        
+        .watch-button {
+            background: #FF0000;
+            color: white;
+            padding: 18px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+            border: none;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            margin: 0 auto;
+            min-width: 220px;
+        }
+        
+        .watch-button:hover {
+            background: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
         }
         
         .note {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #999;
-            margin-top: 25px;
+            margin-top: 40px;
             font-style: italic;
+            line-height: 1.7;
+            padding: 0 20px;
         }
         
         @media (max-width: 480px) {
             .ad-card {
-                padding: 30px 20px;
+                padding: 40px 25px;
+                max-width: 100%;
+                min-height: auto;
+            }
+            
+            .icon {
+                font-size: 5rem;
             }
             
             .title {
-                font-size: 1.8rem;
+                font-size: 2.1rem;
             }
             
             .subtitle {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             
             .date {
-                font-size: 1.1rem;
-                padding: 8px 18px;
+                font-size: 1.2rem;
+                padding: 12px 25px;
             }
             
             .channel-name {
-                font-size: 1.1rem;
-                padding: 10px 20px;
+                font-size: 1.2rem;
+                padding: 12px 25px;
             }
             
             .instructions {
-                font-size: 1rem;
-                padding: 12px;
+                font-size: 1.1rem;
+                padding: 16px;
             }
             
-            .qr-code {
-                width: 120px;
-                height: 120px;
+            .subscribe-button,
+            .watch-button {
+                padding: 16px 30px;
+                font-size: 1.2rem;
+                min-width: 200px;
             }
             
-            .qr-label {
+            .note {
                 font-size: 0.9rem;
+                padding: 0 15px;
             }
         }
     </style>
@@ -197,14 +252,17 @@
             3. اضغط على "اشتراك" وفعّل الجرس
         </div>
 
-        <!-- QR Code اختياري -->
-        <div class="qr-container">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.youtube.com/@teacherKhalil811" alt="QR Code لقناة الأستاذ خليل" class="qr-code">
-            <p class="qr-label">مسح الكود لدخول القناة مباشرة</p>
+        <!-- أزرار تفاعلية مباشرة (بدون QR Code) -->
+        <div class="buttons-container">
+            <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" class="subscribe-button" target="_blank">
+                🔔 اشترك في القناة للحصول على التنبيهات
+            </a>
+            <a href="https://www.youtube.com/@teacherKhalil811" class="watch-button" target="_blank">
+                📺 مشاهدة القناة
+            </a>
         </div>
 
         <p class="note">حصة مباشرة مع الأستاذ خليل البلوشي — لا تفوتوا الدروس القادمة!</p>
     </div>
 </body>
 </html>
-Add advertisement for "الجملة الاسمية"
