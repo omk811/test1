@@ -1,249 +1,525 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إعلان درس الجملة الاسمية - الأستاذ خليل البلوشي</title>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>دروس اللغة العربية للصف الخامس - الأستاذ خليل</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            font-family: 'Baloo Bhaijaan 2', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 30px;
+            box-sizing: border-box;
         }
-        
-        .ad-card {
+
+        body {
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
             background: white;
-            border-radius: 30px;
-            padding: 60px;
-            text-align: center;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            max-width: 550px;
-            min-height: 650px;
-            position: relative;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-        
-        .ad-card::before {
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
             content: '';
             position: absolute;
-            top: -80px;
-            right: -80px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            z-index: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #4CAF50, #2196F3, #FF9800, #F44336);
         }
-        
-        .ad-card::after {
-            content: '';
-            position: absolute;
-            bottom: -80px;
-            left: -80px;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            z-index: 0;
-        }
-        
-        .icon {
-            font-size: 6rem;
-            color: #764ba2;
-            margin-bottom: 25px;
-        }
-        
+
         .title {
             font-size: 2.5rem;
-            color: #333;
             margin-bottom: 10px;
-            font-weight: 700;
-            line-height: 1.3;
-            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
-        
+
         .subtitle {
-            font-size: 1.4rem;
-            color: #666;
-            margin-bottom: 35px;
-            font-weight: 500;
-            line-height: 1.5;
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
         }
-        
-        .datetime {
-            background: #fff0e6;
-            color: #d35400;
-            padding: 14px 28px;
-            border-radius: 35px;
-            font-size: 1.3rem;
+
+        .grade-badge {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
             display: inline-block;
-            margin-bottom: 30px;
-            font-weight: 600;
-            border: 1.5px solid #ffccbc;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-        }
-        
-        .channel-name {
-            background: #e3f2fd;
-            color: #1976d2;
-            padding: 14px 30px;
-            border-radius: 35px;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 25px auto;
-            display: inline-block;
-            border: 1.5px dashed #90caf9;
-            letter-spacing: 1px;
-            min-width: 250px;
-        }
-        
-        .buttons-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin: 30px 0;
-            width: 100%;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .subscribe-button {
-            background: linear-gradient(135deg, #4CAF50, #2E7D32);
-            color: white;
-            padding: 18px 35px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1.3rem;
+            padding: 8px 20px;
+            border-radius: 30px;
             font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
-            border: none;
-            cursor: pointer;
-            display: block;
+            margin-top: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            color: #764ba2;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: inline-block;
+        }
+
+        .details-grid {
+            display: grid;
+            gap: 20px;
+            margin: 25px 0;
+        }
+
+        .detail-card {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e1e8ff;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            font-size: 24px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .detail-content h3 {
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1.3rem;
+        }
+
+        .detail-content p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .youtube-section {
             text-align: center;
-            margin: 0 auto;
-            min-width: 220px;
+            background: #fff5f5;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 35px 0;
+            border: 2px dashed #ff6b6b;
         }
-        
-        .subscribe-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.5);
-        }
-        
-        .watch-button {
+
+        .youtube-button {
             background: #FF0000;
             color: white;
             padding: 18px 35px;
             border-radius: 50px;
             text-decoration: none;
+            display: inline-block;
             font-size: 1.3rem;
             font-weight: bold;
             transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
             border: none;
             cursor: pointer;
-            display: block;
-            text-align: center;
-            margin: 0 auto;
-            min-width: 220px;
+            margin: 15px 0;
+            min-width: 250px;
         }
-        
-        .watch-button:hover {
+
+        .youtube-button:hover {
             background: #cc0000;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 0, 0, 0.4);
         }
-        
-        .note {
-            font-size: 0.95rem;
-            color: #999;
-            margin-top: 40px;
-            font-style: italic;
-            line-height: 1.7;
-            padding: 0 20px;
+
+        .subscribe-button {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            border: none;
+            cursor: pointer;
+            margin: 15px 10px;
+            min-width: 250px;
         }
-        
-        @media (max-width: 480px) {
-            .ad-card {
-                padding: 40px 25px;
-                max-width: 100%;
-                min-height: auto;
-            }
-            
-            .icon {
-                font-size: 5rem;
+
+        .subscribe-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+        }
+
+        .benefits-list {
+            list-style: none;
+        }
+
+        .benefit-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background: #f0f8ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            border-right: 4px solid #667eea;
+        }
+
+        .benefit-icon {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-left: 15px;
+        }
+
+        .teacher-info {
+            background: #f0f8e8;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 30px;
+            border: 1px solid #d4edda;
+        }
+
+        .teacher-name {
+            color: #764ba2;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .share-section {
+            text-align: center;
+            padding: 20px;
+            background: #e3f2fd;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        /* Table Styles */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .schedule-table th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 18px 15px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+
+        .schedule-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: #f8f9ff;
+        }
+
+        .schedule-table tr:hover {
+            background-color: #e3f2fd;
+            transform: scale(1.01);
+            transition: all 0.3s ease;
+        }
+
+        .lesson-topic {
+            font-weight: bold;
+            color: #764ba2;
+        }
+
+        .completed-lesson {
+            position: relative;
+            background-color: #f0f8ff !important;
+        }
+
+        .completed-lesson::after {
+            content: " انتهى البث";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #4CAF50;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .date-cell {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .notification-note {
+            background: #fff3cd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            border: 1px solid #ffeaa7;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
             }
             
             .title {
-                font-size: 2.1rem;
+                font-size: 2rem;
             }
             
             .subtitle {
                 font-size: 1.2rem;
             }
             
-            .datetime {
-                font-size: 1.2rem;
-                padding: 12px 25px;
+            .content {
+                padding: 25px;
             }
             
-            .channel-name {
-                font-size: 1.2rem;
-                padding: 12px 25px;
+            .detail-card {
+                flex-direction: column;
+                text-align: center;
             }
             
-            .subscribe-button,
-            .watch-button {
-                padding: 16px 30px;
-                font-size: 1.2rem;
-                min-width: 200px;
+            .detail-icon {
+                margin-left: 0;
+                margin-bottom: 15px;
             }
             
-            .note {
+            .schedule-table {
                 font-size: 0.9rem;
-                padding: 0 15px;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 12px 8px;
+            }
+            
+            .buttons-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .youtube-button, .subscribe-button {
+                min-width: auto;
+                padding: 15px 20px;
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .completed-lesson::after {
+                top: 5px;
+                left: 5px;
+                font-size: 0.7rem;
+                padding: 3px 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .title {
+                font-size: 1.7rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .detail-card {
+                padding: 20px;
+            }
+            
+            .detail-content h3 {
+                font-size: 1.1rem;
+            }
+            
+            .detail-content p {
+                font-size: 1rem;
+            }
+            
+            .schedule-table {
+                font-size: 0.8rem;
+            }
+            
+            .schedule-table th, .schedule-table td {
+                padding: 10px 5px;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="ad-card">
-        <div class="icon">📘</div>
-        <h1 class="title">درّسنا القادم: الجملة الاسمية</h1>
-        <p class="subtitle">فهمها ببساطة... وإعرابها بثقة!</p>
-
-        <!-- التاريخ والوقت المحدث -->
-        <div class="datetime">
-            الثلاثاء | 30/9/2025<br>
-            <strong>يبدأ البث من 6:50 مساءً إلى 7:50 مساءً</strong>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">📚 مبادرة تعليمية مميزة</h1>
+            <h2 class="subtitle">دروس اللغة العربية</h2>
+            <div class="grade-badge">لطلاب الصف الخامس الأساسي</div>
         </div>
 
-        <!-- اسم القناة -->
-        <div class="channel-name">@teacherKhalil811</div>
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">معلومات الحصص</h2>
+                <div class="details-grid">
+                    <div class="detail-card">
+                        <div class="detail-icon">📅</div>
+                        <div class="detail-content">
+                            <h3>موعد الحصة</h3>
+                            <p>كل يوم ثلاثاء بعد صلاة المغرب</p>
+                        </div>
+                    </div>
 
-        <!-- الأزرار التفاعلية المباشرة -->
-        <div class="buttons-container">
-            <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" class="subscribe-button" target="_blank">
-                🔔 اشترك في القناة للحصول على التنبيهات
-            </a>
-            <a href="https://www.youtube.com/@teacherKhalil811" class="watch-button" target="_blank">
-                📺 انضم إلى الحصة الآن
-            </a>
+                    <div class="detail-card">
+                        <div class="detail-icon">⏱️</div>
+                        <div class="detail-content">
+                            <h3>مدة الحصة</h3>
+                            <p>ساعة واحدة (قابلة للتمديد حسب الحاجة)</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">📺</div>
+                        <div class="detail-content">
+                            <h3>المنصة</h3>
+                            <p>قناة يوتيوب - دروس مباشرة ومفيدة</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">جدول الدروس القادمة</h2>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>الموضوع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="completed-lesson">
+                            <td class="date-cell">9/9/2025</td>
+                            <td class="lesson-topic">درس الإعراب والبناء</td>
+                        </tr>
+                        <!-- تم تأجيل الجملة الاسمية من 16/9 إلى 30/9 -->
+                        <tr>
+                            <td class="date-cell">30/9/2025</td>
+                            <td class="lesson-topic">درس: الجملة الاسمية</td>
+                        </tr>
+                        <!-- تم تأجيل همزة الوصل/القطع إلى الأسبوع التالي -->
+                        <tr>
+                            <td class="date-cell">7/10/2025</td>
+                            <td class="lesson-topic">درس همزة القطع و همزة الوصل</td>
+                        </tr>
+                        <!-- تم حذف حصة "قصيدة سليمان والحمامة" -->
+                    </tbody>
+                </table>
+                <div class="notification-note" style="margin-top: 20px; background: #fff8e1; border-color: #ffb74d; color: #6b4a00;">
+                    <strong>ملاحظة مهمة:</strong> تم تأجيل درس "الجملة الاسمية" إلى 30/9/2025 بسبب ارتباط الأستاذ بدورة تدريبية مهمة. نعتذر عن أي تغيير، ونشكركم على فهمكم.
+                </div>
+            </div>
+
+            <div class="youtube-section">
+                <h2 style="color: #d32f2f; margin-bottom: 20px;">🎯 انضم الآن إلى الحصص المباشرة</h2>
+                <div class="buttons-container">
+                    <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" class="subscribe-button" target="_blank">
+                        🔔 اشترك في القناة للحصول على التنبيهات
+                    </a>
+                    <a href="https://www.youtube.com/@teacherKhalil811" class="youtube-button" target="_blank">
+                        📺 اضغط للدخول إلى القناة
+                    </a>
+                </div>
+                <div class="notification-note">
+                    <strong>ملاحظة:</strong> بعد الاشتراك في القناة، قم بتفعيل الجرس 🔔 لتستلم تنبيهات بداية كل حصة مباشرة
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">مميزات الحصص</h2>
+                <ul class="benefits-list">
+                    <li class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span>شرح مبسط وواضح لأهم دروس المنهج</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span>يساعد الطالب على الفهم والتحصيل</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span>مناسب لجميع طلاب الصف الخامس</span>
+                    </li>
+                    <li class="benefit-item">
+                        <span class="benefit-icon">✅</span>
+                        <span>دروس مباشرة مع الأستاذ</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="teacher-info">
+                <h3 class="teacher-name">مع الأستاذ خليل البلوشي</h3>
+                <p>معلم في اللغة العربية بخبرة طويلة في تعليم المرحلة الأساسية</p>
+            </div>
+
+            <div class="share-section">
+                <h3 style="color: #1976d2; margin-bottom: 15px;">📢 شارك هذا الإعلان مع زملائك!</h3>
+                <p>لا تفوتوا فرصة تقوية مستواكم في اللغة العربية</p>
+            </div>
         </div>
-
-        <p class="note">حصة مباشرة مع الأستاذ خليل البلوشي — لا تفوتوا الدروس القادمة!</p>
     </div>
 </body>
+
 </html>
