@@ -189,9 +189,31 @@
         border-bottom: 1px solid color-mix(in srgb, var(--muted) 10%, transparent);
       }
     }
+
+    .notification {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--brand-2);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(-20px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    
+    .notification.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 <body>
+  <div id="notification" class="notification"></div>
+  
   <header class="nav">
     <div class="container nav-inner">
       <div class="brand">
@@ -219,13 +241,13 @@
       <div class="hero-inner">
         <div>
           <span class="badge">حصص مباشرة على اليوتيوب</span>
-          <h1 id="nextTitle">الدرس الثالث: الجملة الاسمية</h1>
-          <p class="lead">نراجع أهم قواعد <b>الجملة الاسمية</b> مع أمثلة تطبيقية مناسبة لجميع المستويات.</p>
+          <h1 id="nextTitle">الدرس: <span id="currentLessonTitle">يتم التحميل...</span></h1>
+          <p class="lead" id="currentLessonDesc">يتم تحميل وصف الدرس...</p>
 
           <div class="kpis">
             <div class="kpi" aria-label="التاريخ">
               <b>📅 التاريخ</b>
-              <small>السبت 27 سبتمبر 2025</small>
+              <small id="lessonDate">يتم التحميل...</small>
             </div>
             <div class="kpi" aria-label="الوقت">
               <b>⏰ الوقت</b>
@@ -267,36 +289,15 @@
 
     <section id="past" class="card" style="margin-top:16px; padding:16px" aria-labelledby="pastTitle">
       <h2 id="pastTitle">✅ الدروس المنجزة</h2>
-      <div class="grid">
-        <article class="video-card card">
-          <a href="https://www.youtube.com/live/RxTRJ7q659w?si=Myqyaypie1dhIKEz" target="_blank" rel="noopener noreferrer" aria-label="شاهد الآن: الإعراب والبناء">
-            <img class="video-thumb" alt="درس الإعراب والبناء" src="https://img.youtube.com/vi/RxTRJ7q659w/hqdefault.jpg">
-          </a>
-          <div class="video-body">
-            <div class="video-title">1) الإعراب والبناء</div>
-            <div class="video-meta"><a href="https://www.youtube.com/live/RxTRJ7q659w?si=Myqyaypie1dhIKEz" target="_blank" rel="noopener noreferrer">شاهد الآن ↗</a></div>
-          </div>
-        </article>
-        <article class="video-card card">
-          <a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=YlnLk4MDOJ7-Uvwq" target="_blank" rel="noopener noreferrer" aria-label="شاهد الآن: همزتا الوصل والقطع">
-            <img class="video-thumb" alt="درس همزتا الوصل والقطع" src="https://img.youtube.com/vi/LaAF8QKoGIQ/hqdefault.jpg">
-          </a>
-          <div class="video-body">
-            <div class="video-title">2) همزتا الوصل والقطع</div>
-            <div class="video-meta"><a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=YlnLk4MDOJ7-Uvwq" target="_blank" rel="noopener noreferrer">شاهد الآن ↗</a></div>
-          </div>
-        </article>
+      <div class="grid" id="completedLessons">
+        <!-- سيتم ملؤها تلقائياً بالدروس المكتملة -->
       </div>
     </section>
 
     <section id="upcoming" class="card" style="margin-top:16px; padding:16px" aria-labelledby="upTitle">
       <h2 id="upTitle">📚 الدروس القادمة إن شاء الله</h2>
-      <ol class="timeline">
-        <li><b>1) الجملة الاسمية</b> — <span class="soon">السبت 27/09</span></li>
-        <li><b>2) الفاعل</b> — <span class="soon">قريبًا</span></li>
-        <li><b>3) المفعول به</b> — <span class="soon">قريبًا</span></li>
-        <li><b>4) إثبات همزة ابن وحذفها</b> — <span class="soon">قريبًا</span></li>
-        <li><b>5) حروف الجر وشبه الجملة</b> — <span class="soon">قريبًا</span></li>
+      <ol class="timeline" id="upcomingLessonsList">
+        <!-- سيتم ملؤها تلقائياً بالدروس القادمة -->
       </ol>
       <div class="actions">
         <a class="btn" href="https://www.youtube.com/@teacherKhalil811" target="_blank" rel="noopener noreferrer">قناة اليوتيوب</a>
@@ -317,101 +318,275 @@
       <p>© <span id="year"></span> الأستاذ خليل البلوشي — هذا الرابط مخصص لإعلانات الدروس.</p>
       <div class="footer-actions">
         <small>آخر تحديث: <span id="lastUpdated"></span></small>
+        <small>الدرس التالي: <span id="nextLessonInfo"></span></small>
       </div>
     </footer>
   </main>
 
   <!-- بنية بيانات منظمة: حدث عبر JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Event",
-    "name": "الدرس الثالث: الجملة الاسمية",
-    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-    "eventStatus": "https://schema.org/EventScheduled",
-    "startDate": "2025-09-27T11:00:00+04:00",
-    "endDate": "2025-09-27T12:30:00+04:00",
-    "location": {
-      "@type": "VirtualLocation",
-      "url": "https://www.youtube.com/@teacherKhalil811"
-    },
-    "image": [
-      "https://img.youtube.com/vi/RxTRJ7q659w/hqdefault.jpg"
-    ],
-    "description": "مراجعة شاملة للجملة الاسمية مع أمثلة تطبيقية لطلبة الصف الخامس.",
-    "organizer": {
-      "@type": "Person",
-      "name": "الأستاذ خليل البلوشي",
-      "sameAs": "https://www.youtube.com/@teacherKhalil811"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "OMR",
-      "availability": "https://schema.org/InStock"
-    }
-  }
+  <script type="application/ld+json" id="structuredData">
   </script>
 
   <script>
+    // ======== قائمة الدروس مع تواريخها ========
+    const lessons = [
+      { id: 1, title: "الإعراب والبناء", completed: true, date: "2025-09-13", videoId: "RxTRJ7q659w" },
+      { id: 2, title: "همزتا الوصل والقطع", completed: true, date: "2025-09-20", videoId: "LaAF8QKoGIQ" },
+      { id: 3, title: "الجملة الاسمية", completed: false, date: "2025-09-27" },
+      { id: 4, title: "الفاعل", completed: false, date: "2025-10-04" },
+      { id: 5, title: "المفعول به", completed: false, date: "2025-10-11" },
+      { id: 6, title: "إثبات همزة ابن وحذفها", completed: false, date: "2025-10-18" },
+      { id: 7, title: "حروف الجر وشبه الجملة", completed: false, date: "2025-10-25" }
+      // تم حذف الدرسين 9 و 10 حسب الطلب
+    ];
+
     // ======== إعدادات قابلة للتعديل سريعًا ========
     const settings = {
       pageUrl: typeof window !== 'undefined' ? window.location.href : 'https://example.com',
       youtubeChannel: 'https://www.youtube.com/@teacherKhalil811',
-      lessonTitle: 'الدرس الثالث: الجملة الاسمية',
-      // صيغة ISO مع المنطقة الزمنية لعُمان +04:00
-      startISO: '2025-09-27T11:00:00+04:00',
-      endISO:   '2025-09-27T12:30:00+04:00'
+      lessonTime: '11:00', // توقيت عُمان (+04:00)
+      timeZone: '+04:00'
     };
 
-    // ======== العد التنازلي ========
-    const startTime = new Date(settings.startISO).getTime();
-    const cdDays = document.getElementById('cd-days');
-    const cdHours = document.getElementById('cd-hours');
-    const cdMins = document.getElementById('cd-mins');
-    const cdSecs = document.getElementById('cd-secs');
-
-    function updateCountdown(){
-      const now = Date.now();
-      let diff = Math.max(0, startTime - now);
-      const days = Math.floor(diff / (1000*60*60*24)); diff -= days*(1000*60*60*24);
-      const hours = Math.floor(diff / (1000*60*60)); diff -= hours*(1000*60*60);
-      const mins = Math.floor(diff / (1000*60)); diff -= mins*(1000*60);
-      const secs = Math.floor(diff / 1000);
-      cdDays.textContent = String(days);
-      cdHours.textContent = String(hours).padStart(2,'0');
-      cdMins.textContent = String(mins).padStart(2,'0');
-      cdSecs.textContent = String(secs).padStart(2,'0');
+    // ======== الدوال المساعدة ========
+    function formatDate(date, includeTime = false) {
+      const options = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        timeZone: 'UTC'
+      };
+      
+      if (includeTime) {
+        return new Date(date).toLocaleString('ar-EG', { 
+          ...options,
+          hour: '2-digit',
+          minute: '2-digit',
+          timeZone: 'Asia/Muscat'
+        });
+      }
+      
+      return new Date(date).toLocaleDateString('ar-EG', options);
     }
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
+
+    function getNextSaturday() {
+      const today = new Date();
+      const nextSaturday = new Date(today);
+      
+      // الانتقال إلى يوم السبت القادم
+      const daysUntilSaturday = (6 - today.getDay() + 7) % 7 || 7;
+      nextSaturday.setDate(today.getDate() + daysUntilSaturday);
+      
+      // ضبط الوقت إلى 11:00 صباحًا
+      nextSaturday.setHours(11, 0, 0, 0);
+      
+      return nextSaturday;
+    }
+
+    function assignLessonDates() {
+      const today = new Date();
+      let nextDate = getNextSaturday();
+      
+      lessons.forEach(lesson => {
+        if (!lesson.completed && !lesson.date) {
+          lesson.date = nextDate.toISOString().split('T')[0];
+          nextDate.setDate(nextDate.getDate() + 7); // أسبوع واحد
+        }
+      });
+    }
+
+    function getCurrentLesson() {
+      return lessons.find(lesson => !lesson.completed);
+    }
+
+    function getCompletedLessons() {
+      return lessons.filter(lesson => lesson.completed);
+    }
+
+    function getUpcomingLessons() {
+      return lessons.filter(lesson => !lesson.completed);
+    }
+
+    function updatePageContent() {
+      // تحديث الدرس الحالي
+      const currentLesson = getCurrentLesson();
+      if (currentLesson) {
+        document.getElementById('currentLessonTitle').textContent = `الدرس ${currentLesson.id}: ${currentLesson.title}`;
+        document.getElementById('currentLessonDesc').innerHTML = `نراجع أهم قواعد <b>${currentLesson.title}</b> مع أمثلة تطبيقية مناسبة لجميع المستويات.`;
+        document.getElementById('lessonDate').textContent = formatDate(currentLesson.date);
+        
+        // تحديث إعدادات العد التنازلي
+        settings.startISO = `${currentLesson.date}T${settings.lessonTime}:00${settings.timeZone}`;
+        settings.lessonTitle = `الدرس ${currentLesson.id}: ${currentLesson.title}`;
+      }
+
+      // تحديث الدروس المكتملة
+      const completedLessonsContainer = document.getElementById('completedLessons');
+      completedLessonsContainer.innerHTML = '';
+      
+      getCompletedLessons().forEach(lesson => {
+        const lessonElement = document.createElement('article');
+        lessonElement.className = 'video-card card';
+        lessonElement.innerHTML = `
+          <a href="https://www.youtube.com/live/${lesson.videoId}?si=Myqyaypie1dhIKEz" target="_blank" rel="noopener noreferrer" aria-label="شاهد الآن: ${lesson.title}">
+            <img class="video-thumb" alt="درس ${lesson.title}" src="https://img.youtube.com/vi/${lesson.videoId}/hqdefault.jpg">
+          </a>
+          <div class="video-body">
+            <div class="video-title">${lesson.id}) ${lesson.title}</div>
+            <div class="video-meta"><a href="https://www.youtube.com/live/${lesson.videoId}?si=Myqyaypie1dhIKEz" target="_blank" rel="noopener noreferrer">شاهد الآن ↗</a></div>
+          </div>
+        `;
+        completedLessonsContainer.appendChild(lessonElement);
+      });
+
+      // تحديث الدروس القادمة
+      const upcomingLessonsList = document.getElementById('upcomingLessonsList');
+      upcomingLessonsList.innerHTML = '';
+      
+      getUpcomingLessons().forEach(lesson => {
+        const listItem = document.createElement('li');
+        const dateInfo = lesson.date ? formatDate(lesson.date) : '<span class="soon">قريبًا</span>';
+        listItem.innerHTML = `<b>${lesson.id}) ${lesson.title}</b> — ${dateInfo}`;
+        upcomingLessonsList.appendChild(listItem);
+      });
+
+      // تحديث معلومات الدرس التالي في التذييل
+      const nextLesson = getUpcomingLessons()[0];
+      if (nextLesson) {
+        document.getElementById('nextLessonInfo').textContent = `${nextLesson.title} - ${formatDate(nextLesson.date)}`;
+      }
+    }
+
+    function updateStructuredData() {
+      const currentLesson = getCurrentLesson();
+      if (!currentLesson) return;
+      
+      const startDate = new Date(`${currentLesson.date}T${settings.lessonTime}:00${settings.timeZone}`);
+      const endDate = new Date(startDate.getTime() + 90 * 60000); // 90 دقيقة
+      
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": `الدرس ${currentLesson.id}: ${currentLesson.title}`,
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "startDate": startDate.toISOString(),
+        "endDate": endDate.toISOString(),
+        "location": {
+          "@type": "VirtualLocation",
+          "url": settings.youtubeChannel
+        },
+        "image": [
+          "https://img.youtube.com/vi/RxTRJ7q659w/hqdefault.jpg"
+        ],
+        "description": `مراجعة شاملة لـ${currentLesson.title} مع أمثلة تطبيقية لطلبة الصف الخامس.`,
+        "organizer": {
+          "@type": "Person",
+          "name": "الأستاذ خليل البلوشي",
+          "sameAs": settings.youtubeChannel
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "OMR",
+          "availability": "https://schema.org/InStock"
+        }
+      };
+      
+      document.getElementById('structuredData').textContent = JSON.stringify(structuredData);
+    }
+
+    function showNotification(message, duration = 3000) {
+      const notification = document.getElementById('notification');
+      notification.textContent = message;
+      notification.classList.add('show');
+      
+      setTimeout(() => {
+        notification.classList.remove('show');
+      }, duration);
+    }
+
+    // ======== العد التنازلي ========
+    let countdownInterval;
+    function startCountdown() {
+      const startTime = new Date(settings.startISO).getTime();
+      const cdDays = document.getElementById('cd-days');
+      const cdHours = document.getElementById('cd-hours');
+      const cdMins = document.getElementById('cd-mins');
+      const cdSecs = document.getElementById('cd-secs');
+
+      function updateCountdown(){
+        const now = Date.now();
+        let diff = Math.max(0, startTime - now);
+        const days = Math.floor(diff / (1000*60*60*24)); diff -= days*(1000*60*60*24);
+        const hours = Math.floor(diff / (1000*60*60)); diff -= hours*(1000*60*60);
+        const mins = Math.floor(diff / (1000*60)); diff -= mins*(1000*60);
+        const secs = Math.floor(diff / 1000);
+        cdDays.textContent = String(days);
+        cdHours.textContent = String(hours).padStart(2,'0');
+        cdMins.textContent = String(mins).padStart(2,'0');
+        cdSecs.textContent = String(secs).padStart(2,'0');
+        
+        // إذا انتهى العد التنازلي، انتقل تلقائيًا للدرس التالي
+        if (days === 0 && hours === 0 && mins === 0 && secs === 0) {
+          completeCurrentLesson();
+        }
+      }
+      
+      // إيقاف أي عد تنازلي سابق
+      if (countdownInterval) clearInterval(countdownInterval);
+      
+      updateCountdown();
+      countdownInterval = setInterval(updateCountdown, 1000);
+    }
+
+    function completeCurrentLesson() {
+      const currentLesson = getCurrentLesson();
+      if (currentLesson) {
+        currentLesson.completed = true;
+        localStorage.setItem('lessons', JSON.stringify(lessons));
+        showNotification('تم الانتقال تلقائيًا للدرس التالي!', 5000);
+        initializePage();
+      }
+    }
 
     // ======== زر نسخ الرابط ========
     document.getElementById('copyBtn').addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(settings.pageUrl);
-        alert('تم نسخ رابط الصفحة!');
+        showNotification('تم نسخ رابط الصفحة!');
       } catch(e){
-        alert('تعذر النسخ تلقائيًا — يمكنك نسخ الرابط من شريط العنوان.');
+        showNotification('تعذر النسخ تلقائيًا — يمكنك نسخ الرابط من شريط العنوان.');
       }
     });
 
     // ======== مشاركة واتساب ========
-    const waText = encodeURIComponent('📘 دروس مراجعة مع الأستاذ خليل البلوشي\n' + settings.lessonTitle + '\n⏰ ' + new Date(settings.startISO).toLocaleString('ar-EG') + '\n🔗 ' + settings.pageUrl);
-    const waLink = 'https://wa.me/?text=' + waText;
-    const shareWa = document.getElementById('shareWa');
-    shareWa.href = waLink;
+    function updateWhatsAppLink() {
+      const currentLesson = getCurrentLesson();
+      if (!currentLesson) return;
+      
+      const waText = encodeURIComponent('📘 دروس مراجعة مع الأستاذ خليل البلوشي\n' + 
+        `الدرس ${currentLesson.id}: ${currentLesson.title}\n` +
+        '⏰ السبت 11:00 صباحًا (توقيت عمان)\n' + 
+        '🔗 ' + settings.pageUrl);
+      
+      document.getElementById('shareWa').href = 'https://wa.me/?text=' + waText;
+    }
 
     // ======== إنشاء ملف ICS للتقويم ========
     function downloadICS(){
+      const currentLesson = getCurrentLesson();
+      if (!currentLesson) return;
+      
       const dtStart = settings.startISO.replace(/[-:]/g, '').replace(/\.\d{3}/,'');
-      const dtEnd   = settings.endISO.replace(/[-:]/g, '').replace(/\.\d{3}/,'');
+      const dtEnd   = new Date(new Date(settings.startISO).getTime() + 90 * 60000).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/,'');
       const uid = 'khalil-arabic-' + Date.now() + '@example';
-      const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Khalil Arabic//Lessons//AR\nBEGIN:VEVENT\nUID:${uid}\nDTSTAMP:${dtStart}\nDTSTART:${dtStart}\nDTEND:${dtEnd}\nSUMMARY:${settings.lessonTitle}\nDESCRIPTION:بث مباشر عبر اليوتيوب — ${settings.youtubeChannel}\nURL:${settings.youtubeChannel}\nEND:VEVENT\nEND:VCALENDAR`;
+      const ics = `BEGIN:VCALENDAR\nVERSION:2.0\nPRODID:-//Khalil Arabic//Lessons//AR\nBEGIN:VEVENT\nUID:${uid}\nDTSTAMP:${dtStart}\nDTSTART:${dtStart}\nDTEND:${dtEnd}\nSUMMARY:الدرس ${currentLesson.id}: ${currentLesson.title}\nDESCRIPTION:بث مباشر عبر اليوتيوب — ${settings.youtubeChannel}\nURL:${settings.youtubeChannel}\nEND:VEVENT\nEND:VCALENDAR`;
       const blob = new Blob([ics], {type:'text/calendar'});
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
-      a.download = 'Arabic-Lesson.ics';
+      a.download = `Arabic-Lesson-${currentLesson.id}.ics`;
       a.click();
       URL.revokeObjectURL(a.href);
     }
@@ -428,10 +603,6 @@
       localStorage.setItem('theme', next);
     });
 
-    // ======== معلومات أسفل الصفحة ========
-    document.getElementById('year').textContent = String(new Date().getFullYear());
-    document.getElementById('lastUpdated').textContent = new Date().toLocaleString('ar-EG');
-    
     // ======== تفعيل القائمة المتنقلة ========
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const desktopNav = document.querySelector('nav.desktop');
@@ -441,6 +612,45 @@
       mobileNavToggle.setAttribute('aria-expanded', !expanded);
       desktopNav.classList.toggle('active');
     });
+
+    // ======== تهيئة الصفحة ========
+    function initializePage() {
+      // تحميل الدروس من localStorage إذا كانت موجودة
+      const savedLessons = localStorage.getItem('lessons');
+      if (savedLessons) {
+        try {
+          const parsed = JSON.parse(savedLessons);
+          // تحديث الدروس مع الحفاظ على الهيكل الأساسي
+          lessons.forEach((lesson, index) => {
+            if (parsed[index]) {
+              lesson.completed = parsed[index].completed;
+              if (parsed[index].date) lesson.date = parsed[index].date;
+            }
+          });
+        } catch(e) {
+          console.error('Error loading saved lessons:', e);
+        }
+      }
+      
+      // تعيين تواريخ للدروس غير المكتملة
+      assignLessonDates();
+      
+      // حفظ الدروس في localStorage
+      localStorage.setItem('lessons', JSON.stringify(lessons));
+      
+      // تحديث محتوى الصفحة
+      updatePageContent();
+      updateStructuredData();
+      updateWhatsAppLink();
+      startCountdown();
+      
+      // معلومات أسفل الصفحة
+      document.getElementById('year').textContent = String(new Date().getFullYear());
+      document.getElementById('lastUpdated').textContent = new Date().toLocaleString('ar-EG');
+    }
+
+    // بدء تشغيل الصفحة
+    initializePage();
   </script>
 </body>
 </html>
