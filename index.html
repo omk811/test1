@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حصة همزتا الوصل والقطع مع الأستاذ خليل البلوشي</title>
+    <title>دروس مراجعة مع الأستاذ خليل البلوشي</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- إضافة خط Cairo من Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -177,6 +177,7 @@
             display: flex;
             align-items: center;
             transition: transform 0.3s ease;
+            justify-content: space-between;
         }
         
         .lessons-list li:hover {
@@ -198,6 +199,92 @@
         
         .lessons-list li span:last-child {
             font-weight: 600;
+        }
+        
+        .next-lesson-badge {
+            background-color: #ff8a00;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        
+        .completed-lessons {
+            background-color: #e8f5e9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-right: 5px solid #4caf50;
+        }
+        
+        .completed-lessons h3 {
+            color: #2e7d32;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .completed-list {
+            list-style-type: none;
+        }
+        
+        .completed-list li {
+            background-color: white;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .completed-list li:hover {
+            transform: translateX(-5px);
+        }
+        
+        .completed-number {
+            background: linear-gradient(to right, #2e7d32, #4caf50);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 15px;
+            font-weight: bold;
+        }
+        
+        .completed-list li span {
+            font-weight: 600;
+            flex: 1;
+        }
+        
+        .video-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: #FF0000;
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .video-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .video-link i {
+            margin-left: 5px;
         }
         
         .reminder {
@@ -326,14 +413,20 @@
                 margin-bottom: 10px;
             }
             
-            .lessons-list li {
+            .lessons-list li, .completed-list li {
                 flex-direction: column;
                 text-align: center;
+                gap: 10px;
             }
             
-            .lesson-number {
+            .lesson-number, .completed-number {
                 margin-left: 0;
                 margin-bottom: 10px;
+            }
+            
+            .next-lesson-badge {
+                margin-right: 0;
+                margin-top: 10px;
             }
         }
     </style>
@@ -341,20 +434,20 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>همزتا الوصل والقطع</h1>
-            <p>حصة مباشرة على اليوتيوب</p>
+            <h1>دروس مراجعة</h1>
+            <p>حصص مباشرة على اليوتيوب</p>
         </div>
         
         <div class="content">
             <div class="details">
                 <div class="detail-box">
                     <h3>📅 التاريخ</h3>
-                    <p>السبت 2025/09/20</p>
+                    <p>يحدد لاحقاً</p>
                 </div>
                 
                 <div class="detail-box">
                     <h3>⏰ الوقت</h3>
-                    <p>11:00 صباحاً</p>
+                    <p>يحدد لاحقاً</p>
                 </div>
                 
                 <div class="detail-box">
@@ -372,9 +465,32 @@
             </div>
             
             <div class="description">
-                <h3>ماذا ستتعلم في هذه الحصة؟</h3>
-                <p>في هذه الحصة، سنتعمق في فهم همزتي الوصل والقطع، الفروق بينهما، قواعد استخدامهما، وأمثلة تطبيقية متنوعة..</p>
-                <p>هذه الحصة مناسبة لجميع المستويات.</p>
+                <h3>ماذا ستتعلم في هذه الحصص؟</h3>
+                <p>في هذه الحصص، سنراجع أهم قواعد اللغة العربية مع أمثلة تطبيقية متنوعة وشرح مبسط يناسب جميع المستويات.</p>
+                <p>هذه الحصص مناسبة لجميع الطلاب الذين يرغبون في تحسين مستواهم في اللغة العربية.</p>
+            </div>
+            
+            <!-- قسم الدروس المنجزة -->
+            <div class="completed-lessons">
+                <h3>✅ الدروس المنجزة</h3>
+                <ul class="completed-list">
+                    <li>
+                        <span class="completed-number">1</span>
+                        <span>الإعراب والبناء</span>
+                        <a href="https://www.youtube.com/live/RxTRJ7q659w?si=Myqyaypie1dhIKEz" class="video-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            شاهد الآن
+                        </a>
+                    </li>
+                    <li>
+                        <span class="completed-number">2</span>
+                        <span>همزتا الوصل والقطع</span>
+                        <a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=YlnLk4MDOJ7-Uvwq" class="video-link" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            شاهد الآن
+                        </a>
+                    </li>
+                </ul>
             </div>
             
             <!-- قسم الدروس القادمة -->
@@ -382,8 +498,11 @@
                 <h3>📚 الدروس القادمة إن شاء الله</h3>
                 <ul class="lessons-list">
                     <li>
-                        <span class="lesson-number">1</span>
-                        <span>الجملة الاسمية</span>
+                        <div>
+                            <span class="lesson-number">1</span>
+                            <span>الجملة الاسمية</span>
+                            <span class="next-lesson-badge">الدرس القادم</span>
+                        </div>
                     </li>
                     <li>
                         <span class="lesson-number">2</span>
@@ -417,7 +536,7 @@
             </div>
             
             <div class="reminder">
-                <h3>⏰ لا تنسى ضبط المنبه! الساعة 11 صباحاً يوم السبت</h3>
+                <h3>⏰ سيتم الإعلان عن موعد الحصة القادمة قريباً</h3>
             </div>
             
             <a href="https://www.youtube.com/@teacherKhalil811" class="button" target="_blank">اضغط هنا للذهاب إلى القناة</a>
