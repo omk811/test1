@@ -29,13 +29,13 @@
 
   <style>
     :root {
-      --bg: #0b1020;           /* خلفية داكنة أنيقة */
-      --panel: #0f172a;        /* حاويات */
-      --soft: #111827;         /* بطاقات داكنة */
-      --text: #e5e7eb;         /* نص أساسي */
-      --muted: #94a3b8;        /* نص ثانوي */
-      --brand: #0ea5e9;        /* سماوي */
-      --brand-2: #22c55e;      /* أخضر */
+      --bg: #0b1020;
+      --panel: #0f172a;
+      --soft: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --brand: #0ea5e9;
+      --brand-2: #22c55e;
       --danger: #ef4444;
       --shadow: 0 10px 30px rgba(0,0,0,.35);
       --radius: 16px;
@@ -147,11 +147,9 @@
     footer { margin: 22px 0 60px; color: var(--muted); }
     .footer-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 
-    /* Toggle */
     .toggle { background: var(--soft); padding: 6px; border-radius: 999px; border: 1px solid color-mix(in srgb, var(--muted) 20%, transparent); }
     .toggle button { background: white; border: 0; padding: 8px 10px; border-radius: 999px; cursor: pointer; font-weight: 800; }
 
-    /* Mobile Navigation */
     .mobile-nav-toggle {
       display: none;
       background: none;
@@ -323,32 +321,26 @@
     </footer>
   </main>
 
-  <!-- بنية بيانات منظمة: حدث عبر JSON-LD -->
-  <script type="application/ld+json" id="structuredData">
-  </script>
+  <script type="application/ld+json" id="structuredData"></script>
 
   <script>
-    // ======== قائمة الدروس مع تواريخها ========
     const lessons = [
       { id: 1, title: "الإعراب والبناء", completed: true, date: "2025-09-13", videoId: "RxTRJ7q659w" },
       { id: 2, title: "همزتا الوصل والقطع", completed: true, date: "2025-09-20", videoId: "LaAF8QKoGIQ" },
-      { id: 3, title: "الجملة الاسمية", completed: true, date: "2025-09-27", videoId: "fzr_J3GIfKg&t" },
+      { id: 3, title: "الجملة الاسمية", completed: true, date: "2025-09-27", videoId: "fzr_J3GIfKg" }, // ✅ تم التصحيح هنا
       { id: 4, title: "الفاعل", completed: false, date: "2025-10-04" },
       { id: 5, title: "المفعول به", completed: false, date: "2025-10-11" },
       { id: 6, title: "إثبات همزة ابن وحذفها", completed: false, date: "2025-10-18" },
       { id: 7, title: "حروف الجر وشبه الجملة", completed: false, date: "2025-10-25" }
-      // تم حذف الدرسين 9 و 10 حسب الطلب
     ];
 
-    // ======== إعدادات قابلة للتعديل سريعًا ========
     const settings = {
       pageUrl: typeof window !== 'undefined' ? window.location.href : 'https://example.com',
       youtubeChannel: 'https://www.youtube.com/@teacherKhalil811',
-      lessonTime: '11:00', // توقيت عُمان (+04:00)
+      lessonTime: '11:00',
       timeZone: '+04:00'
     };
 
-    // ======== الدوال المساعدة ========
     function formatDate(date, includeTime = false) {
       const options = {
         weekday: 'long',
@@ -357,7 +349,6 @@
         day: 'numeric',
         timeZone: 'UTC'
       };
-
       if (includeTime) {
         return new Date(date).toLocaleString('ar-EG', {
           ...options,
@@ -366,32 +357,25 @@
           timeZone: 'Asia/Muscat'
         });
       }
-
       return new Date(date).toLocaleDateString('ar-EG', options);
     }
 
     function getNextSaturday() {
       const today = new Date();
       const nextSaturday = new Date(today);
-
-      // الانتقال إلى يوم السبت القادم
       const daysUntilSaturday = (6 - today.getDay() + 7) % 7 || 7;
       nextSaturday.setDate(today.getDate() + daysUntilSaturday);
-
-      // ضبط الوقت إلى 11:00 صباحًا
       nextSaturday.setHours(11, 0, 0, 0);
-
       return nextSaturday;
     }
 
     function assignLessonDates() {
       const today = new Date();
       let nextDate = getNextSaturday();
-
       lessons.forEach(lesson => {
         if (!lesson.completed && !lesson.date) {
           lesson.date = nextDate.toISOString().split('T')[0];
-          nextDate.setDate(nextDate.getDate() + 7); // أسبوع واحد
+          nextDate.setDate(nextDate.getDate() + 7);
         }
       });
     }
@@ -409,49 +393,45 @@
     }
 
     function updatePageContent() {
-      // تحديث الدرس الحالي
       const currentLesson = getCurrentLesson();
       if (currentLesson) {
         document.getElementById('currentLessonTitle').textContent = `الدرس ${currentLesson.id}: ${currentLesson.title}`;
         document.getElementById('currentLessonDesc').innerHTML = `نراجع أهم قواعد <b>${currentLesson.title}</b> مع أمثلة تطبيقية مناسبة لجميع المستويات.`;
         document.getElementById('lessonDate').textContent = formatDate(currentLesson.date);
-
-        // تحديث إعدادات العد التنازلي
         settings.startISO = `${currentLesson.date}T${settings.lessonTime}:00${settings.timeZone}`;
         settings.lessonTitle = `الدرس ${currentLesson.id}: ${currentLesson.title}`;
       }
 
-      // تحديث الدروس المكتملة
       const completedLessonsContainer = document.getElementById('completedLessons');
       completedLessonsContainer.innerHTML = '';
 
       getCompletedLessons().forEach(lesson => {
+        const videoUrl = `https://www.youtube.com/live/${lesson.videoId}?si=Myqyaypie1dhIKEz`;
+        const thumbnailUrl = `https://img.youtube.com/vi/${lesson.videoId}/hqdefault.jpg`; // ✅ بدون مسافات
+
         const lessonElement = document.createElement('article');
         lessonElement.className = 'video-card card';
         lessonElement.innerHTML = `
-          <a href="https://www.youtube.com/live/${lesson.videoId}?si=Myqyaypie1dhIKEz" target="_blank" rel="noopener noreferrer" aria-label="شاهد الآن: ${lesson.title}">
-            <img class="video-thumb" alt="درس ${lesson.title}" src="https://img.youtube.com/vi/${lesson.videoId}/hqdefault.jpg">
+          <a href="${videoUrl}" target="_blank" rel="noopener noreferrer" aria-label="شاهد الآن: ${lesson.title}">
+            <img class="video-thumb" alt="درس ${lesson.title}" src="${thumbnailUrl}">
           </a>
           <div class="video-body">
             <div class="video-title">${lesson.id}) ${lesson.title}</div>
-            <div class="video-meta"><a href="https://www.youtube.com/live/${lesson.videoId}?si=Myqyaypie1dhIKEz" target="_blank" rel="noopener noreferrer">شاهد الآن ↗</a></div>
+            <div class="video-meta"><a href="${videoUrl}" target="_blank" rel="noopener noreferrer">شاهد الآن ↗</a></div>
           </div>
         `;
         completedLessonsContainer.appendChild(lessonElement);
       });
 
-      // تحديث الدروس القادمة
       const upcomingLessonsList = document.getElementById('upcomingLessonsList');
       upcomingLessonsList.innerHTML = '';
-
       getUpcomingLessons().forEach(lesson => {
-        const listItem = document.createElement('li');
         const dateInfo = lesson.date ? formatDate(lesson.date) : '<span class="soon">قريبًا</span>';
+        const listItem = document.createElement('li');
         listItem.innerHTML = `<b>${lesson.id}) ${lesson.title}</b> — ${dateInfo}`;
         upcomingLessonsList.appendChild(listItem);
       });
 
-      // تحديث معلومات الدرس التالي في التذييل
       const nextLesson = getUpcomingLessons()[0];
       if (nextLesson) {
         document.getElementById('nextLessonInfo').textContent = `${nextLesson.title} - ${formatDate(nextLesson.date)}`;
@@ -463,7 +443,7 @@
       if (!currentLesson) return;
 
       const startDate = new Date(`${currentLesson.date}T${settings.lessonTime}:00${settings.timeZone}`);
-      const endDate = new Date(startDate.getTime() + 90 * 60000); // 90 دقيقة
+      const endDate = new Date(startDate.getTime() + 90 * 60000);
 
       const structuredData = {
         "@context": "https://schema.org",
@@ -478,7 +458,7 @@
           "url": settings.youtubeChannel
         },
         "image": [
-          "https://img.youtube.com/vi/RxTRJ7q659w/hqdefault.jpg"
+          `https://img.youtube.com/vi/${currentLesson.videoId}/hqdefault.jpg`
         ],
         "description": `مراجعة شاملة لـ${currentLesson.title} مع أمثلة تطبيقية لطلبة الصف الخامس.`,
         "organizer": {
@@ -501,13 +481,11 @@
       const notification = document.getElementById('notification');
       notification.textContent = message;
       notification.classList.add('show');
-
       setTimeout(() => {
         notification.classList.remove('show');
       }, duration);
     }
 
-    // ======== العد التنازلي ========
     let countdownInterval;
     function startCountdown() {
       const startTime = new Date(settings.startISO).getTime();
@@ -528,15 +506,12 @@
         cdMins.textContent = String(mins).padStart(2,'0');
         cdSecs.textContent = String(secs).padStart(2,'0');
 
-        // إذا انتهى العد التنازلي، انتقل تلقائيًا للدرس التالي
         if (days === 0 && hours === 0 && mins === 0 && secs === 0) {
           completeCurrentLesson();
         }
       }
 
-      // إيقاف أي عد تنازلي سابق
       if (countdownInterval) clearInterval(countdownInterval);
-
       updateCountdown();
       countdownInterval = setInterval(updateCountdown, 1000);
     }
@@ -551,7 +526,6 @@
       }
     }
 
-    // ======== زر نسخ الرابط ========
     document.getElementById('copyBtn').addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(settings.pageUrl);
@@ -561,24 +535,19 @@
       }
     });
 
-    // ======== مشاركة واتساب ========
     function updateWhatsAppLink() {
       const currentLesson = getCurrentLesson();
       if (!currentLesson) return;
-
       const waText = encodeURIComponent('📘 دروس مراجعة مع الأستاذ خليل البلوشي\n' +
         `الدرس ${currentLesson.id}: ${currentLesson.title}\n` +
         '⏰ السبت 11:00 صباحًا (توقيت عمان)\n' +
         '🔗 ' + settings.pageUrl);
-
       document.getElementById('shareWa').href = 'https://wa.me/?text=' + waText;
     }
 
-    // ======== إنشاء ملف ICS للتقويم ========
     function downloadICS(){
       const currentLesson = getCurrentLesson();
       if (!currentLesson) return;
-
       const dtStart = settings.startISO.replace(/[-:]/g, '').replace(/\.\d{3}/,'');
       const dtEnd   = new Date(new Date(settings.startISO).getTime() + 90 * 60000).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/,'');
       const uid = 'khalil-arabic-' + Date.now() + '@example';
@@ -592,7 +561,6 @@
     }
     document.getElementById('icsBtn').addEventListener('click', downloadICS);
 
-    // ======== سمة اللون: داكن/فاتح ========
     const root = document.documentElement;
     const saved = localStorage.getItem('theme');
     if(saved){ root.setAttribute('data-theme', saved); }
@@ -603,24 +571,19 @@
       localStorage.setItem('theme', next);
     });
 
-    // ======== تفعيل القائمة المتنقلة ========
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const desktopNav = document.querySelector('nav.desktop');
-
     mobileNavToggle.addEventListener('click', () => {
       const expanded = mobileNavToggle.getAttribute('aria-expanded') === 'true';
       mobileNavToggle.setAttribute('aria-expanded', !expanded);
       desktopNav.classList.toggle('active');
     });
 
-    // ======== تهيئة الصفحة ========
     function initializePage() {
-      // تحميل الدروس من localStorage إذا كانت موجودة
       const savedLessons = localStorage.getItem('lessons');
       if (savedLessons) {
         try {
           const parsed = JSON.parse(savedLessons);
-          // تحديث الدروس مع الحفاظ على الهيكل الأساسي
           lessons.forEach((lesson, index) => {
             if (parsed[index]) {
               lesson.completed = parsed[index].completed;
@@ -632,24 +595,16 @@
         }
       }
 
-      // تعيين تواريخ للدروس غير المكتملة
       assignLessonDates();
-
-      // حفظ الدروس في localStorage
       localStorage.setItem('lessons', JSON.stringify(lessons));
-
-      // تحديث محتوى الصفحة
       updatePageContent();
       updateStructuredData();
       updateWhatsAppLink();
       startCountdown();
-
-      // معلومات أسفل الصفحة
       document.getElementById('year').textContent = String(new Date().getFullYear());
       document.getElementById('lastUpdated').textContent = new Date().toLocaleString('ar-EG');
     }
 
-    // بدء تشغيل الصفحة
     initializePage();
   </script>
 </body>
