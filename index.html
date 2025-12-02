@@ -67,9 +67,28 @@
 <header class="gradient-bg text-white text-center py-12 px-4">
   <h1 class="text-4xl md:text-5xl font-bold mb-3">شروحات منهج اللغة العربية</h1>
   <h2 class="text-2xl md:text-3xl opacity-90 mb-5">للصف الخامس الأساسي</h2>
-  <p class="text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold">
+  <p class="text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold mb-6">
     من تقديم الأستاذ خليل البلوشي
   </p>
+
+  <!-- ⭐ إعلان مواعيد دروس المراجعة ⭐ -->
+  <div class="mt-6 bg-black/20 backdrop-blur-md p-5 rounded-2xl inline-block text-white max-w-xl mx-auto">
+    <h3 class="text-2xl font-bold mb-3">📢 دروس المراجعة الأسبوعية</h3>
+    <p class="text-lg font-semibold">اليوم: السبت من كل أسبوع</p>
+    <p class="text-lg font-semibold">⏰ التوقيت: ٩ – ١٠ صباحًا</p>
+    <p class="text-lg font-semibold">🎥 المنصة: اليوتيوب (بث مباشر)</p>
+
+    <div class="mt-3 text-right">
+      <p class="font-bold mb-2">المحاور:</p>
+      <ul class="text-lg leading-relaxed font-semibold">
+        <li>١. القواعد النحوية</li>
+        <li>٢. القواعد الإملائية</li>
+        <li>٣. النصوص الأدبية</li>
+      </ul>
+    </div>
+
+    <p class="text-lg font-bold mt-4">من تقديم: الأستاذ خليل البلوشي</p>
+  </div>
 </header>
 
 <!-- YOUTUBE SUBSCRIBE BOX -->
@@ -93,26 +112,6 @@
 <section class="max-w-4xl mx-auto px-5 py-4">
 
   <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">الدروس المنجزة</h3>
-
-  <!-- COMPONENT FOR LESSON -->
-  <!-- Copy the block below to add more lessons -->
-
-  <!-- LESSON TEMPLATE
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">عنوان الدرس</h4>
-    </div>
-
-    <div class="video-container">
-      <iframe src="LINK" allowfullscreen></iframe>
-    </div>
-
-    <div class="text-center">
-      <a href="LINK" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-  -->
 
   <!-- LESSON 1 -->
   <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
@@ -198,7 +197,236 @@
     </div>
   </div>
 
-  <!-- LESSON 7 — ADDING الفاصلة -->
+  <!-- LESSON 7 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">درس الفاصلة</h4>
+    </div>
+
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/PqvC_YDYp9k" allowfullscreen></iframe>
+    </div>
+
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=PqvC_YDYp9k&list=PLvMDBvmNXA43cmDEU5TrEeOtgGaLrqUa5" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white py-10 text-center">
+  <p class="text-lg font-semibold">الأستاذ خليل البلوشي</p>
+  <p class="text-gray-300 mb-6">شروحات منهج اللغة العربية للصف الخامس الأساسي</p>
+
+  <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+    <a href="https://www.youtube.com/@teacherKhalil811" class="yt-btn">قناة اليوتيوب</a>
+    <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" class="wa-btn">قناة الواتساب</a>
+  </div>
+</footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شروحات الصف الخامس – الأستاذ خليل البلوشي</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Arabic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Noto Kufi Arabic', sans-serif; }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .card-shadow {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      transition: transform .25s;
+    }
+
+    .card-shadow:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Responsive YouTube */
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      margin-bottom: 1.5rem;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+    }
+
+    .yt-btn, .wa-btn {
+      padding: 12px 22px;
+      border-radius: 50px;
+      font-weight: bold;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .25s;
+    }
+
+    .yt-btn { background:#FF0000; color:#fff; }
+    .yt-btn:hover { background:#CC0000; }
+
+    .wa-btn { background:#25D366; color:#fff; }
+    .wa-btn:hover { background:#128C7E; }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- HEADER -->
+<header class="gradient-bg text-white text-center py-12 px-4">
+  <h1 class="text-4xl md:text-5xl font-bold mb-3">شروحات منهج اللغة العربية</h1>
+  <h2 class="text-2xl md:text-3xl opacity-90 mb-5">للصف الخامس الأساسي</h2>
+  <p class="text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold mb-6">
+    من تقديم الأستاذ خليل البلوشي
+  </p>
+
+  <!-- ⭐ إعلان مواعيد دروس المراجعة ⭐ -->
+  <div class="mt-6 bg-black/20 backdrop-blur-md p-5 rounded-2xl inline-block text-white max-w-xl mx-auto">
+    <h3 class="text-2xl font-bold mb-3">📢 دروس المراجعة الأسبوعية</h3>
+    <p class="text-lg font-semibold">اليوم: السبت من كل أسبوع</p>
+    <p class="text-lg font-semibold">⏰ التوقيت: ٩ – ١٠ صباحًا</p>
+    <p class="text-lg font-semibold">🎥 المنصة: اليوتيوب (بث مباشر)</p>
+
+    <div class="mt-3 text-right">
+      <p class="font-bold mb-2">المحاور:</p>
+      <ul class="text-lg leading-relaxed font-semibold">
+        <li>١. القواعد النحوية</li>
+        <li>٢. القواعد الإملائية</li>
+        <li>٣. النصوص الأدبية</li>
+      </ul>
+    </div>
+
+    <p class="text-lg font-bold mt-4">من تقديم: الأستاذ خليل البلوشي</p>
+  </div>
+</header>
+
+<!-- YOUTUBE SUBSCRIBE BOX -->
+<section class="max-w-3xl mx-auto px-6 py-8">
+  <div class="bg-white rounded-2xl p-6 card-shadow text-center">
+    <h3 class="text-2xl font-bold mb-4">قناتنا على اليوتيوب</h3>
+
+    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+      <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" target="_blank" class="yt-btn">
+        اشترك وتفعّل الجرس
+      </a>
+
+      <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold">
+        زيارة القناة
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LESSONS -->
+<section class="max-w-4xl mx-auto px-5 py-4">
+
+  <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">الدروس المنجزة</h3>
+
+  <!-- LESSON 1 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">الإعراب والبناء</h4>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/RxTRJ7q659w" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=RxTRJ7q659w" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">همزة الوصل وهمزة القطع</h4>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/LaAF8QKoGIQ" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=LaAF8QKoGIQ" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">الجملة الاسمية</h4>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/fzr_J3GIfKg" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=fzr_J3GIfKg" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">الجملة الفعلية</h4>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/QJ62TF47Ukk" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=QJ62TF47Ukk" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">حروف الجر وشبه الجملة</h4>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/XkxKmSI6mws" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=XkxKmSI6mws" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+  <!-- LESSON 6 -->
+  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
+    <div class="flex items-center mb-6">
+      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
+      <h4 class="text-2xl font-bold text-green-800">إثبات همزة (ابن) وحذفها</h4>
+    </div>
+    <div class="video-container">
+      <iframe src="https://www.youtube.com/embed/vK_u5dVKXp8" allowfullscreen></iframe>
+    </div>
+    <div class="text-center">
+      <a href="https://www.youtube.com/watch?v=vK_u5dVKXp8" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+    </div>
+  </div>
+
+  <!-- LESSON 7 -->
   <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
     <div class="flex items-center mb-6">
       <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
