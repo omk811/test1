@@ -3,602 +3,1187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شروحات الصف الخامس – الأستاذ خليل البلوشي</title>
-
-  <!-- Tailwind -->
+  <title>شروحات منهج اللغة العربية - الصف الخامس | الأستاذ خليل البلوشي</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  
   <!-- Arabic Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    body { font-family: 'Noto Kufi Arabic', sans-serif; }
-
-    .header-bg {
-      background: linear-gradient(135deg, #5b7de9 0%, #7c3aad 100%);
+    body {
+      font-family: 'Noto Kufi Arabic', sans-serif;
     }
-
-    .glass-box {
-      background: rgba(255, 255, 255, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+    
+    .gradient-primary {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    }
+    
+    .gradient-secondary {
+      background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+    }
+    
+    .gradient-accent {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
-
-    .card-shadow {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      transition: .25s;
+    
+    .card-hover {
+      transition: all 0.3s ease;
     }
-
-    .card-shadow:hover {
-      transform: translateY(-4px);
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
     }
-
-    /* YouTube Responsive */
+    
     .video-container {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
+      border-radius: 16px;
+      overflow: hidden;
     }
+    
     .video-container iframe {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 14px;
+    }
+    
+    .lesson-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #10b981;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-left: 12px;
+    }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+      border-radius: 5px;
+    }
+    
+    /* Countdown Timer */
+    .countdown-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 0 4px;
+      min-width: 70px;
     }
   </style>
 </head>
 
-<body class="bg-gray-100">
-
-<!-- HEADER -->
-<header class="header-bg text-white text-center py-14 px-4">
-
-  <h1 class="text-4xl md:text-5xl font-bold mb-3">شروحات منهج اللغة العربية</h1>
-  <h2 class="text-xl md:text-3xl opacity-90 mb-6">للصف الخامس الأساسي</h2>
-
-  <p class="text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold">
-    من تقديم الأستاذ خليل البلوشي
-  </p>
-
-</header>
-
-<!-- ⭐ إعلان دروس المراجعة — نسخة جديدة متناسقة ⭐ -->
-<section class="max-w-3xl mx-auto px-5 -mt-20 mb-10">
-  <div class="rounded-3xl p-8 shadow-xl"
-       style="
-         background: linear-gradient(135deg, rgba(91,125,233,0.85), rgba(124,58,173,0.85));
-         backdrop-filter: blur(14px);
-         border: 1px solid rgba(255,255,255,0.25);
-       ">
-
-    <!-- العنوان -->
-    <div class="text-center mb-6">
-      <h3 class="text-3xl font-bold text-white flex items-center justify-center gap-2">
-        📢 <span>دروس المراجعة الأسبوعية</span>
-      </h3>
-    </div>
-
-    <!-- التفاصيل -->
-    <div class="grid grid-cols-1 gap-2 text-lg font-semibold text-white/95">
-      <p>📅 <span class="font-bold">اليوم:</span> السبت من كل أسبوع</p>
-      <p>⏰ <span class="font-bold">الوقت:</span> ٩ – ١٠ صباحًا</p>
-      <p>🎥 <span class="font-bold">المنصة:</span> بث مباشر عبر اليوتيوب</p>
-    </div>
-
-    <!-- التايمر -->
-    <div class="mt-6 text-center text-white">
-      <h4 class="text-xl font-bold mb-2">⏳ الوقت المتبقي للدرس القادم</h4>
-      <div id="countdown" class="text-2xl font-extrabold"></div>
-    </div>
-
-    <!-- زر الانتقال -->
-    <div class="text-center mt-6">
-      <a href="https://www.youtube.com/@teacherKhalil811/live"
-         target="_blank"
-         class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-xl shadow-md transition">
-        🎬 الانتقال إلى البث المباشر
-      </a>
-    </div>
-
-    <hr class="my-6 border-white/40">
-
-    <!-- المحاور -->
-    <p class="text-xl font-bold text-white mb-3">🔹 المحاور:</p>
-    <ul class="text-lg leading-relaxed space-y-1 font-semibold text-white">
-      <li>١. القواعد النحوية</li>
-      <li>٢. القواعد الإملائية</li>
-      <li>٣. النصوص الأدبية</li>
-    </ul>
-
-    <p class="text-xl font-bold text-center text-white mt-6">
-      من تقديم: الأستاذ خليل البلوشي
-    </p>
-  </div>
-</section>
+<body class="bg-gray-50">
   
-<!-- LESSONS SECTION -->
-<section class="max-w-4xl mx-auto px-5 py-6">
-
-  <h3 class="text-3xl font-bold text-gray-800 mb-10 text-center">الدروس المنجزة</h3>
-
-  <!-- LESSON 1 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الإعراب والبناء</h4>
+  <!-- Header -->
+  <header class="gradient-primary text-white pt-6 pb-24 relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-purple-300 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full translate-x-1/3 translate-y-1/3 opacity-20"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Navigation -->
+      <nav class="flex justify-between items-center mb-12">
+        <div class="flex items-center space-x-2 space-x-reverse">
+          <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+            <i class="fas fa-book-open text-white"></i>
+          </div>
+          <span class="text-xl font-bold">الصف الخامس</span>
+        </div>
+        
+        <div class="flex space-x-4 space-x-reverse">
+          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="glass-effect px-4 py-2 rounded-full hover:bg-white/20 transition">
+            <i class="fab fa-youtube ml-2"></i> اليوتيوب
+          </a>
+          <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" target="_blank" class="glass-effect px-4 py-2 rounded-full hover:bg-white/20 transition">
+            <i class="fab fa-whatsapp ml-2"></i> الواتساب
+          </a>
+        </div>
+      </nav>
+      
+      <!-- Hero Section -->
+      <div class="text-center max-w-4xl mx-auto fade-in-up">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          شروحات منهج <span class="text-yellow-300">اللغة العربية</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl opacity-90 mb-8">للصف الخامس الأساسي</h2>
+        
+        <div class="inline-flex items-center bg-white/10 px-6 py-4 rounded-2xl backdrop-blur-sm border border-white/20 mb-10">
+          <div class="ml-4">
+            <i class="fas fa-chalkboard-teacher text-2xl text-yellow-300"></i>
+          </div>
+          <div class="text-right">
+            <p class="text-lg font-bold">من تقديم الأستاذ</p>
+            <p class="text-2xl font-extrabold">خليل البلوشي</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/RxTRJ7q659w" allowfullscreen></iframe>
+  </header>
+  
+  <!-- Weekly Review Section -->
+  <section class="container mx-auto px-4 -mt-16 mb-20 fade-in-up" style="animation-delay: 0.2s">
+    <div class="glass-effect rounded-3xl p-8 shadow-2xl">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-3xl font-bold text-gray-800 flex items-center">
+            <span class="ml-3 text-purple-600"><i class="fas fa-bullhorn"></i></span>
+            دروس المراجعة الأسبوعية
+          </h3>
+          <p class="text-gray-600 mt-2">بث مباشر كل أسبوع على قناة اليوتيوب</p>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold text-lg">
+          <i class="fas fa-calendar-alt ml-2"></i> السبت ٩ - ١٠ صباحًا
+        </div>
+      </div>
+      
+      <!-- Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <!-- Details Card -->
+        <div class="gradient-secondary text-white p-6 rounded-2xl">
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-info-circle ml-3"></i> تفاصيل الدرس
+          </h4>
+          
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="bg-white/20 p-3 rounded-xl ml-4">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <p class="font-semibold">الوقت</p>
+                <p class="text-lg">٩ – ١٠ صباحًا</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="bg-white/20 p-3 rounded-xl ml-4">
+                <i class="fab fa-youtube"></i>
+              </div>
+              <div>
+                <p class="font-semibold">المنصة</p>
+                <p class="text-lg">بث مباشر عبر اليوتيوب</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="bg-white/20 p-3 rounded-xl ml-4">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div>
+                <p class="font-semibold">المعلم</p>
+                <p class="text-lg">الأستاذ خليل البلوشي</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Countdown Card -->
+        <div class="bg-gray-800 text-white p-6 rounded-2xl flex flex-col justify-center">
+          <h4 class="text-xl font-bold mb-6 text-center">
+            <i class="fas fa-hourglass-half ml-2"></i> الوقت المتبقي للدرس القادم
+          </h4>
+          
+          <div class="flex justify-center mb-6">
+            <div class="text-center countdown-box">
+              <div id="countdown-days" class="text-3xl font-extrabold">00</div>
+              <div class="text-sm opacity-80">أيام</div>
+            </div>
+            <div class="text-center countdown-box">
+              <div id="countdown-hours" class="text-3xl font-extrabold">00</div>
+              <div class="text-sm opacity-80">ساعات</div>
+            </div>
+            <div class="text-center countdown-box">
+              <div id="countdown-minutes" class="text-3xl font-extrabold">00</div>
+              <div class="text-sm opacity-80">دقائق</div>
+            </div>
+          </div>
+          
+          <a href="https://www.youtube.com/@teacherKhalil811/live" target="_blank" 
+             class="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full font-bold text-center block transition duration-300">
+            <i class="fas fa-play-circle ml-2"></i> الانتقال إلى البث المباشر
+          </a>
+        </div>
+        
+        <!-- Topics Card -->
+        <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-lg">
+          <h4 class="text-xl font-bold mb-6 text-purple-700">
+            <i class="fas fa-list-check ml-3"></i> محاور المراجعة
+          </h4>
+          
+          <div class="space-y-4">
+            <div class="flex items-center p-3 bg-purple-50 rounded-xl">
+              <div class="gradient-accent text-white p-2 rounded-lg ml-4">
+                <i class="fas fa-language"></i>
+              </div>
+              <div>
+                <p class="font-bold">القواعد النحوية</p>
+                <p class="text-gray-600 text-sm">الإعراب، الجملة الاسمية والفعلية</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center p-3 bg-blue-50 rounded-xl">
+              <div class="gradient-secondary text-white p-2 rounded-lg ml-4">
+                <i class="fas fa-spell-check"></i>
+              </div>
+              <div>
+                <p class="font-bold">القواعد الإملائية</p>
+                <p class="text-gray-600 text-sm">همزتا الوصل والقطع، علامات الترقيم</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center p-3 bg-green-50 rounded-xl">
+              <div class="gradient-accent text-white p-2 rounded-lg ml-4">
+                <i class="fas fa-book"></i>
+              </div>
+              <div>
+                <p class="font-bold">النصوص الأدبية</p>
+                <p class="text-gray-600 text-sm">تحليل وفهم النصوص</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- LESSON 2 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">همزة الوصل وهمزة القطع</h4>
+  </section>
+  
+  <!-- Lessons Section -->
+  <section class="container mx-auto px-4 mb-20 fade-in-up" style="animation-delay: 0.4s">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold text-gray-800 mb-4">الدروس المنجزة</h3>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">شروحات مفصلة لمنهج اللغة العربية للصف الخامس، يمكنك مشاهدتها في أي وقت</p>
     </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/LaAF8QKoGIQ" allowfullscreen></iframe>
+    
+    <!-- Lessons Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Lesson 1 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">الإعراب والبناء</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح مفصل لقواعد الإعراب والبناء في اللغة العربية مع أمثلة تطبيقية</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/RxTRJ7q659w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=RxTRJ7q659w" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 2 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">همزة الوصل وهمزة القطع</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">تعلم الفرق بين همزة الوصل وهمزة القطع مع تطبيقات وأمثلة متنوعة</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/LaAF8QKoGIQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=LaAF8QKoGIQ" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 3 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">الجملة الاسمية</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح الجملة الاسمية وأركانها (المبتدأ والخبر) مع تحليلات متنوعة</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/fzr_J3GIfKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=fzr_J3GIfKg" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 4 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">الجملة الفعلية</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">تعرف على الجملة الفعلية وأركانها (الفعل والفاعل والمفعول به)</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/QJ62TF47Ukk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=QJ62TF47Ukk" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 5 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">حروف الجر وشبه الجملة</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح حروف الجر واستخداماتها مع مفهوم شبه الجملة وتطبيقاتها</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/XkxKmSI6mws" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=XkxKmSI6mws" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 6 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">إثبات همزة (ابن) وحذفها</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">تعلم قواعد إثبات همزة (ابن) وحذفها في مواضع مختلفة</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/vK_u5dVKXp8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=vK_u5dVKXp8" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 7 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lg:col-span-2">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">درس الفاصلة</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح تفصيلي لاستخدامات الفاصلة في الكتابة العربية مع أمثلة تطبيقية</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/PqvC_YDYp9k" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=PqvC_YDYp9k&list=PLvMDBvmNXA43cmDEU5TrEeOtgGaLrqUa5" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- LESSON 3 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الجملة الاسمية</h4>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-12 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- About -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-graduation-cap ml-3 text-blue-400"></i> 
+            حول الموقع
+          </h4>
+          <p class="text-gray-300 leading-relaxed">
+            موقع تعليمي يقدم شروحات منهج اللغة العربية للصف الخامس الأساسي، من تقديم الأستاذ خليل البلوشي، بهدف تبسيط المنهج وتحسين مستوى الطلاب.
+          </p>
+        </div>
+        
+        <!-- Teacher Info -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-chalkboard-teacher ml-3 text-green-400"></i>
+            الأستاذ خليل البلوشي
+          </h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            معلم لغة عربية متخصص في تدريس الصف الخامس، يقدم شروحات مبسطة ومراجعات أسبوعية مباشرة.
+          </p>
+          <div class="flex space-x-4 space-x-reverse">
+            <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-gray-300 hover:text-red-400 transition">
+              <i class="fab fa-youtube text-2xl"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" target="_blank" class="text-gray-300 hover:text-green-400 transition">
+              <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Subscribe -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-bell ml-3 text-yellow-400"></i>
+            اشترك في القناة
+          </h4>
+          <p class="text-gray-300 mb-6">
+            اشترك في قناة اليوتيوب لتشاهد الدروس الجديدة مباشرة وتتلقى إشعارات بالمراجعات الأسبوعية.
+          </p>
+          <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" target="_blank" 
+             class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full font-bold transition duration-300">
+            <i class="fab fa-youtube ml-2"></i> اشترك في القناة
+          </a>
+        </div>
+      </div>
+      
+      <hr class="border-gray-700 mb-8">
+      
+      <!-- Copyright -->
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">
+          © <span id="current-year">2024</span> شروحات منهج اللغة العربية - الصف الخامس. جميع الحقوق محفوظة.
+        </p>
+        
+        <div class="flex space-x-6 space-x-reverse">
+          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-gray-400 hover:text-white transition">
+            <span class="ml-2">اليوتيوب</span>
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" target="_blank" class="text-gray-400 hover:text-white transition">
+            <span class="ml-2">الواتساب</span>
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/fzr_J3GIfKg" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- LESSON 4 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الجملة الفعلية</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/QJ62TF47Ukk" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- LESSON 5 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">حروف الجر وشبه الجملة</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/XkxKmSI6mws" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- LESSON 6 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">إثبات همزة (ابن) وحذفها</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/vK_u5dVKXp8" allowfullscreen></iframe>
-    </div>
-  </div>
-
-  <!-- LESSON 7 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">درس الفاصلة</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/PqvC_YDYp9k" allowfullscreen></iframe>
-    </div>
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 text-center">
-  <p class="text-lg font-semibold">الأستاذ خليل البلوشي</p>
-  <p class="text-gray-300 mb-6">شروحات منهج اللغة العربية للصف الخامس الأساسي</p>
-
-  <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-    <a href="https://www.youtube.com/@teacherKhalil811"
-       class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-bold">
-      قناة اليوتيوب
-    </a>
-
-    <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T"
-       class="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-full font-bold">
-      قناة الواتساب
-    </a>
-  </div>
-</footer>
-
-</body>
-</html>    <p class="text-lg font-semibold">⏰ التوقيت: ٩ – ١٠ صباحًا</p>
-    <p class="text-lg font-semibold">🎥 المنصة: اليوتيوب (بث مباشر)</p>
-
-    <div class="mt-3 text-right">
-      <p class="font-bold mb-2">المحاور:</p>
-      <ul class="text-lg leading-relaxed font-semibold">
-        <li>١. القواعد النحوية</li>
-        <li>٢. القواعد الإملائية</li>
-        <li>٣. النصوص الأدبية</li>
-      </ul>
-    </div>
-
-    <p class="text-lg font-bold mt-4">من تقديم: الأستاذ خليل البلوشي</p>
-  </div>
-</header>
-
-<!-- YOUTUBE SUBSCRIBE BOX -->
-<section class="max-w-3xl mx-auto px-6 py-8">
-  <div class="bg-white rounded-2xl p-6 card-shadow text-center">
-    <h3 class="text-2xl font-bold mb-4">قناتنا على اليوتيوب</h3>
-
-    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-      <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" target="_blank" class="yt-btn">
-        اشترك وتفعّل الجرس
-      </a>
-
-      <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold">
-        زيارة القناة
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- LESSONS -->
-<section class="max-w-4xl mx-auto px-5 py-4">
-
-  <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">الدروس المنجزة</h3>
-
-  <!-- LESSON 1 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الإعراب والبناء</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/RxTRJ7q659w" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=RxTRJ7q659w" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 2 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">همزة الوصل وهمزة القطع</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/LaAF8QKoGIQ" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=LaAF8QKoGIQ" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 3 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الجملة الاسمية</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/fzr_J3GIfKg" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=fzr_J3GIfKg" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 4 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الجملة الفعلية</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/QJ62TF47Ukk" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=QJ62TF47Ukk" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 5 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">حروف الجر وشبه الجملة</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/XkxKmSI6mws" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=XkxKmSI6mws" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 6 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">إثبات همزة (ابن) وحذفها</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/vK_u5dVKXp8" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=vK_u5dVKXp8" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 7 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">درس الفاصلة</h4>
-    </div>
-
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/PqvC_YDYp9k" allowfullscreen></iframe>
-    </div>
-
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=PqvC_YDYp9k&list=PLvMDBvmNXA43cmDEU5TrEeOtgGaLrqUa5" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 text-center">
-  <p class="text-lg font-semibold">الأستاذ خليل البلوشي</p>
-  <p class="text-gray-300 mb-6">شروحات منهج اللغة العربية للصف الخامس الأساسي</p>
-
-  <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-    <a href="https://www.youtube.com/@teacherKhalil811" class="yt-btn">قناة اليوتيوب</a>
-    <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" class="wa-btn">قناة الواتساب</a>
-  </div>
-</footer>
-
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Countdown timer for next Saturday
+    function updateCountdown() {
+      const now = new Date();
+      const dayOfWeek = now.getDay(); // 0 = Sunday, 6 = Saturday
+      
+      // Calculate days until next Saturday
+      let daysUntilSaturday;
+      if (dayOfWeek === 6 && now.getHours() < 9) {
+        // Today is Saturday but before 9 AM
+        daysUntilSaturday = 0;
+      } else {
+        daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
+        if (daysUntilSaturday === 0) daysUntilSaturday = 7;
+      }
+      
+      // Set target date to next Saturday at 9 AM
+      const targetDate = new Date(now);
+      targetDate.setDate(now.getDate() + daysUntilSaturday);
+      targetDate.setHours(9, 0, 0, 0);
+      
+      // Calculate time difference
+      const timeDiff = targetDate - now;
+      
+      if (timeDiff > 0) {
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        
+        // Update countdown display
+        document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+      } else {
+        // If countdown has passed, show lesson is live
+        document.getElementById('countdown-days').textContent = "00";
+        document.getElementById('countdown-hours').textContent = "00";
+        document.getElementById('countdown-minutes').textContent = "00";
+      }
+    }
+    
+    // Update countdown every minute
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+    
+    // Add animation to elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements to animate
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html><!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شروحات الصف الخامس – الأستاذ خليل البلوشي</title>
-
-  <!-- Tailwind -->
+  <title>شروحات منهج اللغة العربية - الصف الخامس | الأستاذ خليل البلوشي</title>
+  
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-
+  
   <!-- Arabic Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <style>
-    body { font-family: 'Noto Kufi Arabic', sans-serif; }
-
-    .gradient-bg {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    body {
+      font-family: 'Noto Kufi Arabic', sans-serif;
     }
-
-    .card-shadow {
-      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-      transition: transform .25s;
+    
+    .gradient-primary {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
     }
-
-    .card-shadow:hover {
-      transform: translateY(-4px);
+    
+    .gradient-secondary {
+      background: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
     }
-
-    /* Responsive YouTube */
+    
+    .gradient-accent {
+      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    }
+    
+    .glass-effect {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+    
     .video-container {
       position: relative;
       width: 100%;
       padding-bottom: 56.25%;
-      margin-bottom: 1.5rem;
+      border-radius: 16px;
+      overflow: hidden;
     }
-
+    
     .video-container iframe {
       position: absolute;
-      inset: 0;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
-      border-radius: 14px;
     }
-
-    .yt-btn, .wa-btn {
-      padding: 12px 22px;
-      border-radius: 50px;
-      font-weight: bold;
-      display: inline-flex;
+    
+    .lesson-badge {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      transition: .25s;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: #10b981;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      margin-left: 12px;
     }
-
-    .yt-btn { background:#FF0000; color:#fff; }
-    .yt-btn:hover { background:#CC0000; }
-
-    .wa-btn { background:#25D366; color:#fff; }
-    .wa-btn:hover { background:#128C7E; }
+    
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .fade-in-up {
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 5px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(to bottom, #4f46e5, #7c3aed);
+      border-radius: 5px;
+    }
+    
+    /* Countdown Timer */
+    .countdown-box {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 0 4px;
+      min-width: 70px;
+    }
   </style>
 </head>
 
-<body class="bg-gray-100">
-
-<!-- HEADER -->
-<header class="gradient-bg text-white text-center py-12 px-4">
-  <h1 class="text-4xl md:text-5xl font-bold mb-3">شروحات منهج اللغة العربية</h1>
-  <h2 class="text-2xl md:text-3xl opacity-90 mb-5">للصف الخامس الأساسي</h2>
-  <p class="text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold mb-6">
-    من تقديم الأستاذ خليل البلوشي
-  </p>
-
-  <!-- ⭐ إعلان مواعيد دروس المراجعة ⭐ -->
-  <div class="mt-6 bg-black/20 backdrop-blur-md p-5 rounded-2xl inline-block text-white max-w-xl mx-auto">
-    <h3 class="text-2xl font-bold mb-3">📢 دروس المراجعة الأسبوعية</h3>
-    <p class="text-lg font-semibold">اليوم: السبت من كل أسبوع</p>
-    <p class="text-lg font-semibold">⏰ التوقيت: ٩ – ١٠ صباحًا</p>
-    <p class="text-lg font-semibold">🎥 المنصة: اليوتيوب (بث مباشر)</p>
-
-    <div class="mt-3 text-right">
-      <p class="font-bold mb-2">المحاور:</p>
-      <ul class="text-lg leading-relaxed font-semibold">
-        <li>١. القواعد النحوية</li>
-        <li>٢. القواعد الإملائية</li>
-        <li>٣. النصوص الأدبية</li>
-      </ul>
+<body class="bg-gray-50">
+  
+  <!-- Header -->
+  <header class="gradient-primary text-white pt-6 pb-24 relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-purple-300 rounded-full -translate-x-1/2 -translate-y-1/2 opacity-20"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-300 rounded-full translate-x-1/3 translate-y-1/3 opacity-20"></div>
+    
+    <div class="container mx-auto px-4 relative z-10">
+      <!-- Navigation -->
+      <nav class="flex justify-between items-center mb-12">
+        <div class="flex items-center space-x-2 space-x-reverse">
+          <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center">
+            <i class="fas fa-book-open text-white"></i>
+          </div>
+          <span class="text-xl font-bold">الصف الخامس</span>
+        </div>
+        
+        <div class="flex space-x-4 space-x-reverse">
+          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="glass-effect px-4 py-2 rounded-full hover:bg-white/20 transition">
+            <i class="fab fa-youtube ml-2"></i> اليوتيوب
+          </a>
+          <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" target="_blank" class="glass-effect px-4 py-2 rounded-full hover:bg-white/20 transition">
+            <i class="fab fa-whatsapp ml-2"></i> الواتساب
+          </a>
+        </div>
+      </nav>
+      
+      <!-- Hero Section -->
+      <div class="text-center max-w-4xl mx-auto fade-in-up">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+          شروحات منهج <span class="text-yellow-300">اللغة العربية</span>
+        </h1>
+        <h2 class="text-2xl md:text-3xl opacity-90 mb-8">للصف الخامس الأساسي</h2>
+        
+        <div class="inline-flex items-center bg-white/10 px-6 py-4 rounded-2xl backdrop-blur-sm border border-white/20 mb-10">
+          <div class="ml-4">
+            <i class="fas fa-chalkboard-teacher text-2xl text-yellow-300"></i>
+          </div>
+          <div class="text-right">
+            <p class="text-lg font-bold">من تقديم الأستاذ</p>
+            <p class="text-2xl font-extrabold">خليل البلوشي</p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <p class="text-lg font-bold mt-4">من تقديم: الأستاذ خليل البلوشي</p>
-  </div>
-</header>
-
-<!-- YOUTUBE SUBSCRIBE BOX -->
-<section class="max-w-3xl mx-auto px-6 py-8">
-  <div class="bg-white rounded-2xl p-6 card-shadow text-center">
-    <h3 class="text-2xl font-bold mb-4">قناتنا على اليوتيوب</h3>
-
-    <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-      <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" target="_blank" class="yt-btn">
-        اشترك وتفعّل الجرس
-      </a>
-
-      <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-blue-600 hover:text-blue-800 font-semibold">
-        زيارة القناة
-      </a>
+  </header>
+  
+  <!-- Weekly Review Section -->
+  <section class="container mx-auto px-4 -mt-16 mb-20 fade-in-up" style="animation-delay: 0.2s">
+    <div class="glass-effect rounded-3xl p-8 shadow-2xl">
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-3xl font-bold text-gray-800 flex items-center">
+            <span class="ml-3 text-purple-600"><i class="fas fa-bullhorn"></i></span>
+            دروس المراجعة الأسبوعية
+          </h3>
+          <p class="text-gray-600 mt-2">بث مباشر كل أسبوع على قناة اليوتيوب</p>
+        </div>
+        
+        <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-full font-bold text-lg">
+          <i class="fas fa-calendar-alt ml-2"></i> السبت ٩ - ١٠ صباحًا
+        </div>
+      </div>
+      
+      <!-- Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        <!-- Details Card -->
+        <div class="gradient-secondary text-white p-6 rounded-2xl">
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-info-circle ml-3"></i> تفاصيل الدرس
+          </h4>
+          
+          <div class="space-y-4">
+            <div class="flex items-center">
+              <div class="bg-white/20 p-3 rounded-xl ml-4">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>
+                <p class="font-semibold">الوقت</p>
+                <p class="text-lg">٩ – ١٠ صباحًا</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="bg-white/20 p-3 rounded-xl ml-4">
+                <i class="fab fa-youtube"></i>
+              </div>
+              <div>
+                <p class="font-semibold">المنصة</p>
+                <p class="text-lg">بث مباشر عبر اليوتيوب</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center">
+              <div class="bg-white/20 p-3 rounded-xl ml-4">
+                <i class="fas fa-user-graduate"></i>
+              </div>
+              <div>
+                <p class="font-semibold">المعلم</p>
+                <p class="text-lg">الأستاذ خليل البلوشي</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Countdown Card -->
+        <div class="bg-gray-800 text-white p-6 rounded-2xl flex flex-col justify-center">
+          <h4 class="text-xl font-bold mb-6 text-center">
+            <i class="fas fa-hourglass-half ml-2"></i> الوقت المتبقي للدرس القادم
+          </h4>
+          
+          <div class="flex justify-center mb-6">
+            <div class="text-center countdown-box">
+              <div id="countdown-days" class="text-3xl font-extrabold">00</div>
+              <div class="text-sm opacity-80">أيام</div>
+            </div>
+            <div class="text-center countdown-box">
+              <div id="countdown-hours" class="text-3xl font-extrabold">00</div>
+              <div class="text-sm opacity-80">ساعات</div>
+            </div>
+            <div class="text-center countdown-box">
+              <div id="countdown-minutes" class="text-3xl font-extrabold">00</div>
+              <div class="text-sm opacity-80">دقائق</div>
+            </div>
+          </div>
+          
+          <a href="https://www.youtube.com/@teacherKhalil811/live" target="_blank" 
+             class="bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full font-bold text-center block transition duration-300">
+            <i class="fas fa-play-circle ml-2"></i> الانتقال إلى البث المباشر
+          </a>
+        </div>
+        
+        <!-- Topics Card -->
+        <div class="bg-white border border-gray-200 p-6 rounded-2xl shadow-lg">
+          <h4 class="text-xl font-bold mb-6 text-purple-700">
+            <i class="fas fa-list-check ml-3"></i> محاور المراجعة
+          </h4>
+          
+          <div class="space-y-4">
+            <div class="flex items-center p-3 bg-purple-50 rounded-xl">
+              <div class="gradient-accent text-white p-2 rounded-lg ml-4">
+                <i class="fas fa-language"></i>
+              </div>
+              <div>
+                <p class="font-bold">القواعد النحوية</p>
+                <p class="text-gray-600 text-sm">الإعراب، الجملة الاسمية والفعلية</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center p-3 bg-blue-50 rounded-xl">
+              <div class="gradient-secondary text-white p-2 rounded-lg ml-4">
+                <i class="fas fa-spell-check"></i>
+              </div>
+              <div>
+                <p class="font-bold">القواعد الإملائية</p>
+                <p class="text-gray-600 text-sm">همزتا الوصل والقطع، علامات الترقيم</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center p-3 bg-green-50 rounded-xl">
+              <div class="gradient-accent text-white p-2 rounded-lg ml-4">
+                <i class="fas fa-book"></i>
+              </div>
+              <div>
+                <p class="font-bold">النصوص الأدبية</p>
+                <p class="text-gray-600 text-sm">تحليل وفهم النصوص</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- LESSONS -->
-<section class="max-w-4xl mx-auto px-5 py-4">
-
-  <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">الدروس المنجزة</h3>
-
-  <!-- LESSON 1 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الإعراب والبناء</h4>
+  </section>
+  
+  <!-- Lessons Section -->
+  <section class="container mx-auto px-4 mb-20 fade-in-up" style="animation-delay: 0.4s">
+    <div class="text-center mb-12">
+      <h3 class="text-4xl font-bold text-gray-800 mb-4">الدروس المنجزة</h3>
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">شروحات مفصلة لمنهج اللغة العربية للصف الخامس، يمكنك مشاهدتها في أي وقت</p>
     </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/RxTRJ7q659w" allowfullscreen></iframe>
+    
+    <!-- Lessons Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Lesson 1 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">الإعراب والبناء</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح مفصل لقواعد الإعراب والبناء في اللغة العربية مع أمثلة تطبيقية</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/RxTRJ7q659w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=RxTRJ7q659w" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 2 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">همزة الوصل وهمزة القطع</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">تعلم الفرق بين همزة الوصل وهمزة القطع مع تطبيقات وأمثلة متنوعة</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/LaAF8QKoGIQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=LaAF8QKoGIQ" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 3 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">الجملة الاسمية</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح الجملة الاسمية وأركانها (المبتدأ والخبر) مع تحليلات متنوعة</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/fzr_J3GIfKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=fzr_J3GIfKg" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 4 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">الجملة الفعلية</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">تعرف على الجملة الفعلية وأركانها (الفعل والفاعل والمفعول به)</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/QJ62TF47Ukk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=QJ62TF47Ukk" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 5 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">حروف الجر وشبه الجملة</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح حروف الجر واستخداماتها مع مفهوم شبه الجملة وتطبيقاتها</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/XkxKmSI6mws" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=XkxKmSI6mws" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 6 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">إثبات همزة (ابن) وحذفها</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">تعلم قواعد إثبات همزة (ابن) وحذفها في مواضع مختلفة</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/vK_u5dVKXp8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=vK_u5dVKXp8" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
+      
+      <!-- Lesson 7 -->
+      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lg:col-span-2">
+        <div class="p-6">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="text-xl font-bold text-gray-800">درس الفاصلة</h4>
+            <div class="lesson-badge">
+              <i class="fas fa-check"></i>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-6">شرح تفصيلي لاستخدامات الفاصلة في الكتابة العربية مع أمثلة تطبيقية</p>
+          
+          <div class="video-container mb-6">
+            <iframe src="https://www.youtube.com/embed/PqvC_YDYp9k" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          
+          <a href="https://www.youtube.com/watch?v=PqvC_YDYp9k&list=PLvMDBvmNXA43cmDEU5TrEeOtgGaLrqUa5" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
+            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=RxTRJ7q659w" class="yt-btn">🎬 شاهد على اليوتيوب</a>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-12 pb-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- About -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-graduation-cap ml-3 text-blue-400"></i> 
+            حول الموقع
+          </h4>
+          <p class="text-gray-300 leading-relaxed">
+            موقع تعليمي يقدم شروحات منهج اللغة العربية للصف الخامس الأساسي، من تقديم الأستاذ خليل البلوشي، بهدف تبسيط المنهج وتحسين مستوى الطلاب.
+          </p>
+        </div>
+        
+        <!-- Teacher Info -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-chalkboard-teacher ml-3 text-green-400"></i>
+            الأستاذ خليل البلوشي
+          </h4>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            معلم لغة عربية متخصص في تدريس الصف الخامس، يقدم شروحات مبسطة ومراجعات أسبوعية مباشرة.
+          </p>
+          <div class="flex space-x-4 space-x-reverse">
+            <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-gray-300 hover:text-red-400 transition">
+              <i class="fab fa-youtube text-2xl"></i>
+            </a>
+            <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" target="_blank" class="text-gray-300 hover:text-green-400 transition">
+              <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Subscribe -->
+        <div>
+          <h4 class="text-xl font-bold mb-6 flex items-center">
+            <i class="fas fa-bell ml-3 text-yellow-400"></i>
+            اشترك في القناة
+          </h4>
+          <p class="text-gray-300 mb-6">
+            اشترك في قناة اليوتيوب لتشاهد الدروس الجديدة مباشرة وتتلقى إشعارات بالمراجعات الأسبوعية.
+          </p>
+          <a href="https://www.youtube.com/@teacherKhalil811?sub_confirmation=1" target="_blank" 
+             class="inline-flex items-center bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full font-bold transition duration-300">
+            <i class="fab fa-youtube ml-2"></i> اشترك في القناة
+          </a>
+        </div>
+      </div>
+      
+      <hr class="border-gray-700 mb-8">
+      
+      <!-- Copyright -->
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-400 mb-4 md:mb-0">
+          © <span id="current-year">2024</span> شروحات منهج اللغة العربية - الصف الخامس. جميع الحقوق محفوظة.
+        </p>
+        
+        <div class="flex space-x-6 space-x-reverse">
+          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="text-gray-400 hover:text-white transition">
+            <span class="ml-2">اليوتيوب</span>
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" target="_blank" class="text-gray-400 hover:text-white transition">
+            <span class="ml-2">الواتساب</span>
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <!-- LESSON 2 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">همزة الوصل وهمزة القطع</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/LaAF8QKoGIQ" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=LaAF8QKoGIQ" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 3 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الجملة الاسمية</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/fzr_J3GIfKg" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=fzr_J3GIfKg" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 4 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">الجملة الفعلية</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/QJ62TF47Ukk" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=QJ62TF47Ukk" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 5 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">حروف الجر وشبه الجملة</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/XkxKmSI6mws" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=XkxKmSI6mws" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 6 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">إثبات همزة (ابن) وحذفها</h4>
-    </div>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/vK_u5dVKXp8" allowfullscreen></iframe>
-    </div>
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=vK_u5dVKXp8" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-  <!-- LESSON 7 -->
-  <div class="bg-white rounded-2xl p-6 mb-8 card-shadow">
-    <div class="flex items-center mb-6">
-      <div class="bg-green-500 text-white w-8 h-8 flex justify-center items-center rounded-full font-bold ml-3">✓</div>
-      <h4 class="text-2xl font-bold text-green-800">درس الفاصلة</h4>
-    </div>
-
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/PqvC_YDYp9k" allowfullscreen></iframe>
-    </div>
-
-    <div class="text-center">
-      <a href="https://www.youtube.com/watch?v=PqvC_YDYp9k&list=PLvMDBvmNXA43cmDEU5TrEeOtgGaLrqUa5" class="yt-btn">🎬 شاهد على اليوتيوب</a>
-    </div>
-  </div>
-
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 text-center">
-  <p class="text-lg font-semibold">الأستاذ خليل البلوشي</p>
-  <p class="text-gray-300 mb-6">شروحات منهج اللغة العربية للصف الخامس الأساسي</p>
-
-  <div class="flex flex-col md:flex-row justify-center items-center gap-4">
-    <a href="https://www.youtube.com/@teacherKhalil811" class="yt-btn">قناة اليوتيوب</a>
-    <a href="https://whatsapp.com/channel/0029VamotBKCxoAy3fzUcv3T" class="wa-btn">قناة الواتساب</a>
-  </div>
-</footer>
-
+  </footer>
+  
+  <!-- JavaScript -->
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    
+    // Countdown timer for next Saturday
+    function updateCountdown() {
+      const now = new Date();
+      const dayOfWeek = now.getDay(); // 0 = Sunday, 6 = Saturday
+      
+      // Calculate days until next Saturday
+      let daysUntilSaturday;
+      if (dayOfWeek === 6 && now.getHours() < 9) {
+        // Today is Saturday but before 9 AM
+        daysUntilSaturday = 0;
+      } else {
+        daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
+        if (daysUntilSaturday === 0) daysUntilSaturday = 7;
+      }
+      
+      // Set target date to next Saturday at 9 AM
+      const targetDate = new Date(now);
+      targetDate.setDate(now.getDate() + daysUntilSaturday);
+      targetDate.setHours(9, 0, 0, 0);
+      
+      // Calculate time difference
+      const timeDiff = targetDate - now;
+      
+      if (timeDiff > 0) {
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        
+        // Update countdown display
+        document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+        document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+        document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+      } else {
+        // If countdown has passed, show lesson is live
+        document.getElementById('countdown-days').textContent = "00";
+        document.getElementById('countdown-hours').textContent = "00";
+        document.getElementById('countdown-minutes').textContent = "00";
+      }
+    }
+    
+    // Update countdown every minute
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+    
+    // Add animation to elements on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+        }
+      });
+    }, observerOptions);
+    
+    // Observe elements to animate
+    document.querySelectorAll('.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
 </body>
 </html>
