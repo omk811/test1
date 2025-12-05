@@ -48,39 +48,8 @@
     }
 
     .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Video Container */
-    .video-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Lesson Badge */
-    .lesson-badge {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      background: #10b981;
-      color: white;
-      border-radius: 50%;
-      font-weight: bold;
-      margin-left: 12px;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
     /* Animations */
@@ -132,34 +101,50 @@
       min-width: 70px;
     }
 
-    /* Dropdown Menu */
-    .dropdown:hover .dropdown-menu {
-      display: block;
+    /* Filter Button Active State */
+    .filter-active {
+      background-color: #7c3aed;
+      color: white;
     }
 
-    .dropdown-menu {
-      display: none;
-      position: absolute;
-      right: 0;
-      top: 100%;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      padding: 8px 0;
-      min-width: 200px;
-      z-index: 50;
+    /* Category Badge */
+    .category-badge {
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
     }
 
-    .dropdown-menu a {
-      display: block;
-      padding: 8px 16px;
-      color: #374151;
-      text-decoration: none;
-      transition: background 0.2s;
+    .badge-grammar {
+      background-color: #e0e7ff;
+      color: #4f46e5;
     }
 
-    .dropdown-menu a:hover {
-      background: #f3f4f6;
+    .badge-spelling {
+      background-color: #f0f9ff;
+      color: #0ea5e9;
+    }
+
+    /* Lesson Card Icon */
+    .lesson-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      margin-left: 16px;
+      flex-shrink: 0;
+    }
+
+    .icon-grammar {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+    }
+
+    .icon-spelling {
+      background: linear-gradient(135deg, #0ea5e9, #3b82f6);
+      color: white;
     }
   </style>
 </head>
@@ -180,8 +165,8 @@
           </div>
           <span class="text-xl font-bold">الصف الخامس</span>
         </div>
-          </div>
 
+        <div class="flex items-center space-x-4 space-x-reverse">
           <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="glass-effect px-4 py-2 rounded-full hover:bg-white/20 transition">
             <i class="fab fa-youtube ml-2"></i> اليوتيوب
           </a>
@@ -320,23 +305,13 @@
                 <p class="text-gray-600 text-sm">همزتا الوصل والقطع، علامات الترقيم</p>
               </div>
             </div>
-
-            <div class="flex items-center p-3 bg-green-50 rounded-xl">
-              <div class="gradient-accent text-white p-2 rounded-lg ml-4">
-                <i class="fas fa-book"></i>
-              </div>
-              <div>
-                <p class="font-bold">النصوص الأدبية</p>
-                <p class="text-gray-600 text-sm">تحليل وفهم النصوص</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Lessons Section -->
+  <!-- Lessons Section - Simplified Version -->
   <section class="container mx-auto px-4 mb-20 fade-in-up" style="animation-delay: 0.4s">
     <div class="text-center mb-12">
       <h3 class="text-4xl font-bold text-gray-800 mb-4">الدروس المنجزة</h3>
@@ -344,161 +319,15 @@
     </div>
 
     <!-- Filter Buttons -->
-    <div class="flex justify-center space-x-4 mb-8">
-      <button class="px-6 py-3 bg-purple-600 text-white rounded-full filter-active" data-filter="all">الكل</button>
-      <button class="px-6 py-3 bg-gray-200 rounded-full" data-filter="grammar">قواعد نحوية</button>
-      <button class="px-6 py-3 bg-gray-200 rounded-full" data-filter="spelling">إملاء</button>
-      <button class="px-6 py-3 bg-gray-200 rounded-full" data-filter="literature">نصوص أدبية</button>
+    <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <button class="px-6 py-3 rounded-full filter-active transition-all duration-300" data-filter="all">الكل</button>
+      <button class="px-6 py-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-all duration-300" data-filter="grammar">قواعد نحوية</button>
+      <button class="px-6 py-3 bg-gray-200 rounded-full hover:bg-gray-300 transition-all duration-300" data-filter="spelling">إملاء</button>
     </div>
 
-    <!-- Lessons Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <!-- Lesson 1 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card" data-category="grammar">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">الإعراب والبناء</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">شرح مفصل لقواعد الإعراب والبناء في اللغة العربية مع أمثلة تطبيقية</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/RxTRJ7q659w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=RxTRJ7q659w" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
-
-      <!-- Lesson 2 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card" data-category="spelling">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">همزة الوصل وهمزة القطع</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">تعلم الفرق بين همزة الوصل وهمزة القطع مع تطبيقات وأمثلة متنوعة</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/LaAF8QKoGIQ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=LaAF8QKoGIQ" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
-
-      <!-- Lesson 3 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card" data-category="grammar">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">الجملة الاسمية</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">شرح الجملة الاسمية وأركانها (المبتدأ والخبر) مع تحليلات متنوعة</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/fzr_J3GIfKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=fzr_J3GIfKg" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
-
-      <!-- Lesson 4 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card" data-category="grammar">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">الجملة الفعلية</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">تعرف على الجملة الفعلية وأركانها (الفعل والفاعل والمفعول به)</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/QJ62TF47Ukk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=QJ62TF47Ukk" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
-
-      <!-- Lesson 5 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card" data-category="grammar">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">حروف الجر وشبه الجملة</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">شرح حروف الجر واستخداماتها مع مفهوم شبه الجملة وتطبيقاتها</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/XkxKmSI6mws" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=XkxKmSI6mws" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
-
-      <!-- Lesson 6 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card" data-category="spelling">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">إثبات همزة (ابن) وحذفها</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">تعلم قواعد إثبات همزة (ابن) وحذفها في مواضع مختلفة</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/vK_u5dVKXp8" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=vK_u5dVKXp8" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
-
-      <!-- Lesson 7 -->
-      <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-hover lesson-card lg:col-span-2" data-category="spelling">
-        <div class="p-6">
-          <div class="flex justify-between items-center mb-4">
-            <h4 class="text-xl font-bold text-gray-800">درس الفاصلة</h4>
-            <div class="lesson-badge">
-              <i class="fas fa-check"></i>
-            </div>
-          </div>
-          <p class="text-gray-600 mb-6">شرح تفصيلي لاستخدامات الفاصلة في الكتابة العربية مع أمثلة تطبيقية</p>
-
-          <div class="video-container mb-6">
-            <iframe loading="lazy" src="https://www.youtube.com/embed/PqvC_YDYp9k" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-
-          <a href="https://www.youtube.com/watch?v=PqvC_YDYp9k&list=PLvMDBvmNXA43cmDEU5TrEeOtgGaLrqUa5" target="_blank" class="block w-full bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 rounded-xl text-center font-semibold transition duration-300">
-            <i class="fas fa-play ml-2"></i> شاهد الدرس على اليوتيوب
-          </a>
-        </div>
-      </div>
+    <!-- Lessons List - Simplified -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="lessons-container">
+      <!-- Lessons will be loaded here -->
     </div>
   </section>
 
@@ -635,27 +464,160 @@
       observer.observe(el);
     });
 
+    // Lessons data - Simplified (only grammar and spelling)
+    const lessons = [
+      {
+        title: "الإعراب والبناء",
+        description: "شرح مفصل لقواعد الإعراب والبناء في اللغة العربية",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=RxTRJ7q659w",
+        icon: "fas fa-language",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "همزة الوصل وهمزة القطع",
+        description: "تعلم الفرق بين همزة الوصل وهمزة القطع",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=LaAF8QKoGIQ",
+        icon: "fas fa-spell-check",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "الجملة الاسمية",
+        description: "شرح الجملة الاسمية وأركانها (المبتدأ والخبر)",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=fzr_J3GIfKg",
+        icon: "fas fa-align-left",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "الجملة الفعلية",
+        description: "تعرف على الجملة الفعلية وأركانها",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=QJ62TF47Ukk",
+        icon: "fas fa-bolt",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "حروف الجر وشبه الجملة",
+        description: "شرح حروف الجر واستخداماتها",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=XkxKmSI6mws",
+        icon: "fas fa-link",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "إثبات همزة (ابن) وحذفها",
+        description: "قواعد إثبات همزة (ابن) وحذفها",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=vK_u5dVKXp8",
+        icon: "fas fa-pen-nib",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "درس الفاصلة",
+        description: "استخدامات الفاصلة في الكتابة العربية",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=PqvC_YDYp9k",
+        icon: "fas fa-comma",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "علامات الترقيم",
+        description: "شرح شامل لعلامات الترقيم واستخداماتها",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=example3",
+        icon: "fas fa-highlighter",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "المبتدأ والخبر",
+        description: "شرح تفصيلي للمبتدأ والخبر وأنواعهما",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=example4",
+        icon: "fas fa-clipboard-list",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      }
+    ];
+
+    // Function to render simplified lessons
+    function renderLessons(filter = 'all') {
+      const container = document.getElementById('lessons-container');
+      container.innerHTML = '';
+      
+      const filteredLessons = filter === 'all' 
+        ? lessons 
+        : lessons.filter(lesson => lesson.category === filter);
+      
+      filteredLessons.forEach(lesson => {
+        const lessonElement = document.createElement('div');
+        lessonElement.className = 'bg-white rounded-xl border border-gray-200 overflow-hidden card-hover lesson-card p-5';
+        lessonElement.setAttribute('data-category', lesson.category);
+        
+        lessonElement.innerHTML = `
+          <div class="flex items-start">
+            <div class="lesson-icon ${lesson.iconClass}">
+              <i class="${lesson.icon} text-lg"></i>
+            </div>
+            
+            <div class="flex-1">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="text-lg font-bold text-gray-800">${lesson.title}</h4>
+                <span class="category-badge ${lesson.badgeClass}">
+                  ${lesson.category === 'grammar' ? 'قواعد' : 'إملاء'}
+                </span>
+              </div>
+              
+              <p class="text-gray-600 text-sm mb-4">${lesson.description}</p>
+              
+              <a href="${lesson.youtubeUrl}" target="_blank" 
+                 class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold transition duration-300">
+                <i class="fab fa-youtube ml-2"></i>
+                <span>شاهد على اليوتيوب</span>
+                <i class="fas fa-external-link-alt text-xs mr-2"></i>
+              </a>
+            </div>
+          </div>
+        `;
+        
+        container.appendChild(lessonElement);
+      });
+    }
+
+    // Initial render
+    renderLessons();
+
     // Filter lessons by category
     document.querySelectorAll('[data-filter]').forEach(button => {
       button.addEventListener('click', () => {
         const filter = button.getAttribute('data-filter');
-        document.querySelectorAll('.lesson-card').forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-
+        
         // Update active button
         document.querySelectorAll('[data-filter]').forEach(btn => {
-          btn.classList.remove('bg-purple-600', 'text-white');
+          btn.classList.remove('filter-active');
           btn.classList.add('bg-gray-200');
         });
+        
+        button.classList.add('filter-active');
         button.classList.remove('bg-gray-200');
-        button.classList.add('bg-purple-600', 'text-white');
+        
+        // Render filtered lessons
+        renderLessons(filter);
       });
     });
+
+    // Set initial active state for filter button
+    document.querySelector('[data-filter="all"]').classList.add('filter-active');
+    document.querySelector('[data-filter="all"]').classList.remove('bg-gray-200');
   </script>
 </body>
 </html>
