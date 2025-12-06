@@ -609,4 +609,309 @@
         category: "review",
         youtubeUrl: "https://www.youtube.com/watch?v=7GhZHF2wbmY",
         icon: "fas fa-medal",
-        badgeClass: "badge-review
+        badgeClass: "badge-review",
+        iconClass: "icon-review"
+      },
+      {
+        title: "المراجعة الشاملة النهائية 2024/2025",
+        description: "مراجعة شاملة لجميع قواعد النحو والإملاء للفصل الأول. ضرورية قبل الاختبار النهائي.",
+        category: "review",
+        youtubeUrl: "https://www.youtube.com/watch?v=jGNuKssZCeQ&t",
+        icon: "fas fa-medal",
+        badgeClass: "badge-review",
+        iconClass: "icon-review"
+      },
+      {
+        title: "الإعراب والبناء",
+        description: "شرح مفصل لقواعد الإعراب والبناء في اللغة العربية لتقوية أساسيات الطالب.",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=RxTRJ7q659w",
+        icon: "fas fa-language",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "همزة الوصل وهمزة القطع",
+        description: "تعلم الفرق بين همزة الوصل وهمزة القطع بطريقة سهلة ومبسطة.",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=LaAF8QKoGIQ",
+        icon: "fas fa-spell-check",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "الجملة الاسمية",
+        description: "شرح الجملة الاسمية وأركانها الأساسية: المبتدأ والخبر مع الأمثلة.",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=fzr_J3GIfKg",
+        icon: "fas fa-align-left",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "الجملة الفعلية",
+        description: "تعرف على الجملة الفعلية وأركانها (الفعل، الفاعل، المفعول به) وكيفية إعرابها.",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=QJ62TF47Ukk",
+        icon: "fas fa-bolt",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "حروف الجر وشبه الجملة",
+        description: "شرح حروف الجر واستخداماتها في تكوين شبه الجملة (الجار والمجرور).",
+        category: "grammar",
+        youtubeUrl: "https://www.youtube.com/watch?v=XkxKmSI6mws",
+        icon: "fas fa-link",
+        badgeClass: "badge-grammar",
+        iconClass: "icon-grammar"
+      },
+      {
+        title: "إثبات همزة (ابن) وحذفها",
+        description: "قواعد كتابة همزة (ابن) وحذفها في المواضع المختلفة وفقاً لقواعد الإملاء.",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=vK_u5dVKXp8",
+        icon: "fas fa-pen-nib",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "درس الفاصلة",
+        description: "التعرف على استخدامات الفاصلة (،) في الكتابة العربية لتنظيم النص.",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=PqvC_YDYp9k",
+        icon: "fas fa-comma",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      },
+      {
+        title: "علامات الترقيم",
+        description: "شرح شامل لأهم علامات الترقيم واستخداماتها الصحيحة في النصوص.",
+        category: "spelling",
+        youtubeUrl: "https://www.youtube.com/watch?v=PqvC_YDYp9k",
+        icon: "fas fa-highlighter",
+        badgeClass: "badge-spelling",
+        iconClass: "icon-spelling"
+      }
+    ];
+
+    // ============================================
+    // المتغيرات العامة
+    // ============================================
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    // ============================================
+    // تعيين السنة الحالية في الفوتر
+    // ============================================
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // ============================================
+    // العد التنازلي للدرس القادم (كل سبت 9 صباحاً)
+    // ============================================
+    function updateCountdown() {
+      const now = new Date();
+      const dayOfWeek = now.getDay();
+
+      let daysUntilSaturday;
+      if (dayOfWeek === 6 && now.getHours() < 9) {
+        daysUntilSaturday = 0;
+      } else {
+        daysUntilSaturday = (6 - dayOfWeek + 7) % 7;
+        if (daysUntilSaturday === 0) daysUntilSaturday = 7;
+      }
+
+      const targetDate = new Date(now);
+      targetDate.setDate(now.getDate() + daysUntilSaturday);
+      targetDate.setHours(9, 0, 0, 0);
+
+      const timeDiff = targetDate - now;
+      const daysEl = document.getElementById('countdown-days');
+      const hoursEl = document.getElementById('countdown-hours');
+      const minutesEl = document.getElementById('countdown-minutes');
+
+      if (timeDiff > 0) {
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+
+        daysEl.textContent = days.toString().padStart(2, '0');
+        hoursEl.textContent = hours.toString().padStart(2, '0');
+        minutesEl.textContent = minutes.toString().padStart(2, '0');
+      } else {
+        daysEl.textContent = "00";
+        hoursEl.textContent = "00";
+        minutesEl.textContent = "00";
+      }
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+
+    // ============================================
+    // عرض الدروس
+    // ============================================
+    function renderLessons(filter = 'all', search = '') {
+      const container = document.getElementById('lessons-container');
+      const emptyState = document.getElementById('emptyState');
+      container.innerHTML = '';
+
+      // ترتيب الدروس - المراجعة النهائية أولاً
+      const sortedLessons = [...lessons].sort((a, b) => {
+        if (a.category === 'review' && b.category !== 'review') return -1;
+        if (a.category !== 'review' && b.category === 'review') return 1;
+        return 0;
+      });
+
+      // تصفية الدروس
+      let filteredLessons = filter === 'all' 
+        ? sortedLessons 
+        : sortedLessons.filter(lesson => lesson.category === filter);
+
+      // البحث في الدروس
+      if (search) {
+        filteredLessons = filteredLessons.filter(lesson => 
+          lesson.title.includes(search) || 
+          lesson.description.includes(search)
+        );
+      }
+
+      // عرض رسالة فارغة إذا لم توجد نتائج
+      if (filteredLessons.length === 0) {
+        emptyState.classList.remove('hidden');
+        return;
+      } else {
+        emptyState.classList.add('hidden');
+      }
+
+      // إنشاء بطاقات الدروس
+      filteredLessons.forEach((lesson, index) => {
+        const lessonElement = document.createElement('div');
+        lessonElement.className = 'bg-white rounded-xl border border-gray-100 overflow-hidden card-hover lesson-card p-6 fade-in-up';
+        lessonElement.style.animationDelay = `${index * 0.1}s`;
+        lessonElement.setAttribute('data-category', lesson.category);
+
+        const categoryName = lesson.category === 'review' ? 'مراجعة نهائية' : 
+                            (lesson.category === 'grammar' ? 'قواعد نحوية' : 'إملاء');
+
+        lessonElement.innerHTML = `
+          <div class="flex items-start">
+            <div class="lesson-icon ${lesson.iconClass}">
+              <i class="${lesson.icon} text-2xl" aria-hidden="true"></i>
+            </div>
+            
+            <div class="flex-1 min-w-0">
+              <div class="flex justify-between items-start mb-2">
+                <h4 class="text-xl font-extrabold text-gray-900 leading-snug">${lesson.title}</h4>
+                <span class="category-badge ${lesson.badgeClass} ml-2">
+                  ${categoryName}
+                </span>
+              </div>
+              
+              <p class="text-gray-500 text-sm mb-4">${lesson.description}</p>
+              
+              <a href="${lesson.youtubeUrl}" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center text-red-600 hover:text-red-700 font-bold transition duration-300"
+                  aria-label="مشاهدة شرح ${lesson.title}">
+                <i class="fab fa-youtube ml-2 text-lg" aria-hidden="true"></i>
+                <span>مشاهدة الشرح</span>
+                <i class="fas fa-arrow-left text-xs mr-2" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        `;
+
+        container.appendChild(lessonElement);
+      });
+    }
+
+    // العرض الأولي للدروس
+    setTimeout(() => renderLessons(), 300);
+
+    // ============================================
+    // تصفية الدروس
+    // ============================================
+    document.querySelectorAll('[data-filter]').forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        currentFilter = filter;
+
+        // تحديث أزرار الفلتر
+        document.querySelectorAll('[data-filter]').forEach(btn => {
+          btn.classList.remove('filter-active');
+          btn.classList.add('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+        });
+
+        button.classList.add('filter-active');
+        button.classList.remove('bg-gray-200', 'text-gray-700', 'hover:bg-gray-300');
+
+        // عرض الدروس المصفاة
+        renderLessons(filter, searchQuery);
+      });
+    });
+
+    // ============================================
+    // البحث في الدروس
+    // ============================================
+    const searchInput = document.getElementById('searchInput');
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderLessons(currentFilter, searchQuery);
+    });
+
+    // ============================================
+    // زر العودة للأعلى
+    // ============================================
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // ============================================
+    // Intersection Observer للأنيميشن عند التمرير
+    // ============================================
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in-up');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('section.fade-in-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ============================================
+    // تحسين الأداء - تقليل Repaints
+    // ============================================
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+  </script>
+</body>
+</html>
