@@ -5,14 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>شروحات الصف الخامس – الأستاذ خليل البلوشي</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Arabic Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    body { font-family: 'Noto Kufi Arabic', sans-serif; }
+    body { 
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      scroll-behavior: smooth;
+    }
 
     .header-bg {
       background: linear-gradient(135deg, #5b7de9 0%, #7c3aad 100%);
@@ -25,6 +31,7 @@
 
     .card-shadow:hover {
       transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
     .video-container {
@@ -32,6 +39,7 @@
       width: 100%;
       padding-bottom: 56.25%;
     }
+    
     .video-container iframe {
       position: absolute;
       inset: 0;
@@ -39,195 +47,510 @@
       height: 100%;
       border-radius: 14px;
     }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .section-title {
+        font-size: 1.75rem;
+      }
+      
+      .card-title {
+        font-size: 1.25rem;
+      }
+    }
+    
+    /* Custom color for semester sections */
+    .semester-one {
+      border-top: 5px solid #5b7de9;
+    }
+    
+    .semester-two {
+      border-top: 5px solid #34d399;
+    }
+    
+    /* Animation for coming soon section */
+    @keyframes pulse {
+      0% { opacity: 0.8; }
+      50% { opacity: 1; }
+      100% { opacity: 0.8; }
+    }
+    
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+    
+    /* Highlight for featured lesson */
+    .featured-lesson {
+      background-color: #f0f7ff;
+      border-right: 4px solid #3b82f6;
+    }
   </style>
 </head>
 
 <body class="bg-gray-100">
 
 <!-- HEADER -->
-<header class="header-bg text-white text-center py-16 px-4">
-  <h1 class="text-4xl md:text-5xl font-bold mb-4">
-    شروحات منهج اللغة العربية
-  </h1>
-  <h2 class="text-2xl md:text-3xl opacity-90 mb-6">
-    للصف الخامس الأساسي
-  </h2>
+<header class="header-bg text-white text-center py-12 md:py-16 px-4">
+  <div class="max-w-6xl mx-auto">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+      <i class="fas fa-book-open mr-2"></i>
+      شروحات منهج اللغة العربية
+    </h1>
+    <h2 class="text-xl md:text-2xl lg:text-3xl opacity-90 mb-6">
+      للصف الخامس الأساسي
+    </h2>
 
-  <p class="text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold">
-    من تقديم الأستاذ خليل البلوشي
-  </p>
+    <p class="text-base md:text-lg bg-white/20 px-6 py-3 rounded-xl inline-block font-semibold">
+      <i class="fas fa-chalkboard-teacher ml-2"></i>
+      من تقديم الأستاذ خليل البلوشي
+    </p>
+  </div>
 </header>
 
-<!-- رسالة ختامية بديلة عن المواعيد -->
-<section class="max-w-3xl mx-auto px-6 -mt-8 mb-12">
-  <div class="bg-white rounded-3xl p-8 card-shadow text-center">
+<!-- رسالة ختامية -->
+<section class="max-w-3xl mx-auto px-4 md:px-6 -mt-6 md:-mt-8 mb-12">
+  <div class="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 card-shadow text-center">
 
-    <h3 class="text-2xl font-bold text-gray-800 mb-4">
+    <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">
+      <i class="fas fa-info-circle text-blue-500 ml-2"></i>
       📌 انتهت حصص المراجعة
     </h3>
 
-    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+    <p class="text-base md:text-lg text-gray-700 leading-relaxed mb-4">
       انتهت حصص المراجعة لدروس الفصل الدراسي الأول،
       بعد تقديم كل ما يحتاجه الطالب بإذن الله
       لاجتياز الامتحان النهائي بثقة واستعداد.
     </p>
 
-    <p class="text-lg font-semibold text-gray-800">
+    <p class="text-base md:text-lg font-semibold text-gray-800">
+      <i class="fas fa-praying-hands ml-2"></i>
       نسأل الله لأبنائنا الطلبة التوفيق،
       وتحقيق التفوق، وجعل جهدهم هذا في ميزان النجاح 🌱
     </p>
 
   </div>
-<!-- الدروس المهمة في الاختبار النهائي -->
-<section class="max-w-4xl mx-auto px-5 py-8">
+</section>
 
-  <h3 class="text-3xl font-bold text-gray-800 mb-10 text-center">
+<!-- الفصل الدراسي الأول -->
+<section class="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8">
+  <h3 class="section-title text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
+    <i class="fas fa-graduation-cap text-blue-600 ml-2"></i>
+    الفصل الدراسي الأول
+  </h3>
+
+  <!-- قسم المراجعة الكاملة -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+    <!-- قسم المراجعة الكاملة -->
+    <div class="bg-white rounded-2xl md:rounded-3xl p-6 card-shadow semester-one">
+      <div class="flex items-center mb-4">
+        <div class="bg-blue-100 p-3 rounded-full ml-3">
+          <i class="fas fa-book text-blue-600 text-xl"></i>
+        </div>
+        <h4 class="card-title text-xl font-bold text-blue-700">
+          المراجعة الكاملة
+        </h4>
+      </div>
+      
+      <p class="text-gray-700 mb-6">
+        مراجعة شاملة لجميع دروس الفصل الدراسي الأول تشمل النحو والإملاء
+      </p>
+      
+      <ol class="space-y-4 pr-2">
+        <!-- الرابط المضاف في البداية -->
+        <li class="pb-3 border-b border-gray-100 featured-lesson px-3 -mx-3 py-3 rounded-lg">
+          <div class="flex items-start mb-1">
+            <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded ml-2">الأهم</span>
+            <strong class="text-gray-800 flex-1">المراجعة الشاملة النهائية للفصل الأول</strong>
+          </div>
+          <a href="https://www.youtube.com/live/WMa5roukbis?si=HRJ9BXinpb7hqf7l" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition mt-2">
+            <i class="fas fa-play-circle ml-2 text-blue-500"></i>
+            <span>مشاهدة المراجعة الشاملة</span>
+          </a>
+          <p class="text-sm text-gray-600 mt-1">مراجعة نهائية شاملة لجميع أجزاء المنهج</p>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100 mt-4">
+          <a href="https://youtu.be/jGNuKssZCeQ?si=PAka9UKrVPkYbCtt" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>المراجعة الكاملة في النحو والإملاء</span>
+          </a>
+        </li>
+      </ol>
+      
+      <div class="mt-6 pt-4 border-t border-gray-100">
+        <span class="inline-flex items-center text-sm text-gray-500">
+          <i class="fas fa-video ml-1"></i>
+          <span>درسان</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- قسم النحو -->
+    <div class="bg-white rounded-2xl md:rounded-3xl p-6 card-shadow semester-one">
+      <div class="flex items-center mb-4">
+        <div class="bg-purple-100 p-3 rounded-full ml-3">
+          <i class="fas fa-pen-nib text-purple-600 text-xl"></i>
+        </div>
+        <h4 class="card-title text-xl font-bold text-purple-700">
+          النحو والصرف
+        </h4>
+      </div>
+      
+      <p class="text-gray-700 mb-6">
+        دروس النحو والصرف المتعلقة بالجملة الفعلية والاسمية والإعراب والبناء
+      </p>
+      
+      <ol class="space-y-4 pr-2">
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://www.youtube.com/live/7GhZHF2wbmY?si=MgRPdeTLQ0N6aBu3" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>المراجعة الخاصة بالنحو</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://www.youtube.com/live/QJ62TF47Ukk?si=EwH0ltGD8ti9Mlud" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الجملة الفعلية – أ</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://youtu.be/A5JkbWfmwUA?si=2obMM7sPFY87Y98s" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الجملة الفعلية – الفاعل</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://youtu.be/Zu4DKqXsPIc?si=Vq76YwsCUaRDHvrt" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الجملة الفعلية – المفعول به</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://www.youtube.com/live/fzr_J3GIfKg?si=fk6ceXnogSRKwCP6" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الجملة الاسمية – أ</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://youtu.be/h-DwEmAd0rc?si=AeUGRYXBC8MqId-t" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الجملة الاسمية – ب</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://youtu.be/XkxKmSI6mws?si=WI7kd2lQelf34jIb" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>حروف الجر وشبه الجملة</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://www.youtube.com/live/RxTRJ7q659w?si=L2cMl6JKlzZBtrPy" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الإعراب والبناء – أ</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://youtu.be/16Np_J7Ij8w?si=BXlItsIwLQnOWNKj" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>الإعراب والبناء – ب</span>
+          </a>
+        </li>
+      </ol>
+      
+      <div class="mt-6 pt-4 border-t border-gray-100">
+        <span class="inline-flex items-center text-sm text-gray-500">
+          <i class="fas fa-video ml-1"></i>
+          <span>9 دروس</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- قسم الإملاء -->
+    <div class="bg-white rounded-2xl md:rounded-3xl p-6 card-shadow semester-one">
+      <div class="flex items-center mb-4">
+        <div class="bg-green-100 p-3 rounded-full ml-3">
+          <i class="fas fa-spell-check text-green-600 text-xl"></i>
+        </div>
+        <h4 class="card-title text-xl font-bold text-green-700">
+          الإملاء
+        </h4>
+      </div>
+      
+      <p class="text-gray-700 mb-6">
+        دروس الإملاء المتعلقة بهمزة الوصل والقطع والقواعد الإملائية الأساسية
+      </p>
+      
+      <ol class="space-y-4 pr-2">
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=7uKauU2XgSdgRYY5" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>همزة الوصل والقطع – (1)</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>همزة الوصل والقطع – (2)</span>
+          </a>
+        </li>
+        
+        <li class="pb-3 border-b border-gray-100">
+          <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>إثبات همزة (ابن) والفاصلة</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="https://www.youtube.com/live/kYc8fFuJOuE?si=pD2lrcUDb3wjhNXe" target="_blank"
+             class="flex items-center text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play-circle ml-2"></i>
+            <span>المراجعة الخاصة بالإملاء</span>
+          </a>
+        </li>
+      </ol>
+      
+      <div class="mt-6 pt-4 border-t border-gray-100">
+        <span class="inline-flex items-center text-sm text-gray-500">
+          <i class="fas fa-video ml-1"></i>
+          <span>4 دروس</span>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- قسم الفصل الدراسي الثاني -->
+  <div class="bg-gradient-to-l from-green-50 to-emerald-50 rounded-2xl md:rounded-3xl p-6 md:p-8 card-shadow semester-two pulse-animation">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-6 md:mb-0 md:mr-6">
+        <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+          <i class="fas fa-calendar-alt text-green-600 ml-2"></i>
+          الفصل الدراسي الثاني
+        </h3>
+        <p class="text-lg text-gray-700">
+          سيتم إضافة دروس الفصل الدراسي الثاني قريبًا بإذن الله
+        </p>
+        <p class="text-gray-600 mt-2">
+          <i class="fas fa-clock ml-1"></i>
+          سيتم الإعلان عن مواعيد الدروس قريبًا
+        </p>
+      </div>
+      
+      <div class="bg-white/80 p-4 md:p-6 rounded-xl text-center">
+        <div class="text-4xl md:text-5xl text-green-600 mb-2">
+          <i class="fas fa-hourglass-half"></i>
+        </div>
+        <p class="font-bold text-green-700 text-lg">قريبًا</p>
+      </div>
+    </div>
+    
+    <div class="mt-6 pt-6 border-t border-green-200">
+      <div class="flex flex-wrap gap-2">
+        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+          <i class="fas fa-book ml-1"></i>
+          دروس جديدة
+        </span>
+        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+          <i class="fas fa-video ml-1"></i>
+          شروحات مرئية
+        </span>
+        <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+          <i class="fas fa-question-circle ml-1"></i>
+          تمارين تفاعلية
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- قسم الدروس المهمة في الاختبار النهائي -->
+<section class="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-8">
+  <h3 class="section-title text-2xl md:text-3xl font-bold text-gray-800 mb-8 text-center">
+    <i class="fas fa-star text-yellow-500 ml-2"></i>
     الدروس المهمة في الاختبار النهائي
   </h3>
 
-  <!-- القسم الأول -->
-  <div class="bg-white rounded-3xl p-6 mb-10 card-shadow">
-    <h4 class="text-2xl font-bold text-indigo-700 mb-6">
-      📘 القسم الأول: التطبيقات اللغوية (النحو والصرف)
-    </h4>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <!-- قسم التطبيقات اللغوية -->
+    <div class="bg-white rounded-2xl md:rounded-3xl p-6 card-shadow">
+      <div class="flex items-center mb-6">
+        <div class="bg-indigo-100 p-3 rounded-full ml-3">
+          <i class="fas fa-language text-indigo-600 text-xl"></i>
+        </div>
+        <h4 class="card-title text-xl md:text-2xl font-bold text-indigo-700">
+          التطبيقات اللغوية (النحو والصرف)
+        </h4>
+      </div>
 
-    <ol class="list-decimal pr-6 space-y-6 text-lg text-gray-800">
+      <ol class="space-y-6 pr-2">
+        <!-- إضافة الرابط المهم في هذا القسم أيضًا -->
+        <li class="pb-4 border-b border-gray-100 bg-blue-50 px-3 -mx-3 py-3 rounded-lg">
+          <div class="flex items-start mb-1">
+            <span class="bg-red-600 text-white text-xs px-2 py-1 rounded ml-2">الأهم للاختبار</span>
+            <strong class="text-gray-800 flex-1">المراجعة الشاملة النهائية للفصل الأول</strong>
+          </div>
+          <a href="https://www.youtube.com/live/WMa5roukbis?si=HRJ9BXinpb7hqf7l" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة المراجعة الشاملة</span>
+          </a>
+          <p class="text-sm text-gray-600 mt-1">مراجعة نهائية شاملة لجميع أجزاء المنهج</p>
+        </li>
+        
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">المراجعة الكاملة في النحو والإملاء</strong>
+          <a href="https://youtu.be/jGNuKssZCeQ?si=PAka9UKrVPkYbCtt" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>المراجعة الكاملة في النحو والإملاء</strong><br>
-        <a href="https://youtu.be/jGNuKssZCeQ?si=PAka9UKrVPkYbCtt" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">المراجعة الخاصة بالنحو</strong>
+          <a href="https://www.youtube.com/live/7GhZHF2wbmY?si=MgRPdeTLQ0N6aBu3" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>المراجعة الخاصة بالنحو</strong><br>
-        <a href="https://www.youtube.com/live/7GhZHF2wbmY?si=MgRPdeTLQ0N6aBu3" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">الجملة الفعلية – الفاعل</strong>
+          <a href="https://youtu.be/A5JkbWfmwUA?si=2obMM7sPFY87Y98s" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>الجملة الفعلية – أ</strong><br>
-        <a href="https://www.youtube.com/live/QJ62TF47Ukk?si=EwH0ltGD8ti9Mlud" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">الجملة الاسمية – أ</strong>
+          <a href="https://www.youtube.com/live/fzr_J3GIfKg?si=fk6ceXnogSRKwCP6" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>الجملة الفعلية – الفاعل</strong><br>
-        <a href="https://youtu.be/A5JkbWfmwUA?si=2obMM7sPFY87Y98s" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">الإعراب والبناء – أ</strong>
+          <a href="https://www.youtube.com/live/RxTRJ7q659w?si=L2cMl6JKlzZBtrPy" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
+      </ol>
+    </div>
 
-      <li>
-        <strong>الجملة الفعلية – المفعول به</strong><br>
-        <a href="https://youtu.be/Zu4DKqXsPIc?si=Vq76YwsCUaRDHvrt" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+    <!-- قسم التطبيقات الإملائية -->
+    <div class="bg-white rounded-2xl md:rounded-3xl p-6 card-shadow">
+      <div class="flex items-center mb-6">
+        <div class="bg-green-100 p-3 rounded-full ml-3">
+          <i class="fas fa-edit text-green-600 text-xl"></i>
+        </div>
+        <h4 class="card-title text-xl md:text-2xl font-bold text-green-700">
+          التطبيقات الإملائية
+        </h4>
+      </div>
 
-      <li>
-        <strong>الجملة الاسمية – أ</strong><br>
-        <a href="https://www.youtube.com/live/fzr_J3GIfKg?si=fk6ceXnogSRKwCP6" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+      <ol class="space-y-6 pr-2">
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">همزة الوصل والقطع – (1)</strong>
+          <a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=7uKauU2XgSdgRYY5" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>الجملة الاسمية – ب</strong><br>
-        <a href="https://youtu.be/h-DwEmAd0rc?si=AeUGRYXBC8MqId-t" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">همزة الوصل والقطع – (2)</strong>
+          <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>حروف الجر وشبه الجملة</strong><br>
-        <a href="https://youtu.be/XkxKmSI6mws?si=WI7kd2lQelf34jIb" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
+        <li class="pb-4 border-b border-gray-100">
+          <strong class="block text-gray-800 mb-1">إثبات همزة (ابن) والفاصلة</strong>
+          <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
 
-      <li>
-        <strong>الإعراب والبناء – أ</strong><br>
-        <a href="https://www.youtube.com/live/RxTRJ7q659w?si=L2cMl6JKlzZBtrPy" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
-
-      <li>
-        <strong>الإعراب والبناء – ب</strong><br>
-        <a href="https://youtu.be/16Np_J7Ij8w?si=BXlItsIwLQnOWNKj" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
-
-    </ol>
+        <li>
+          <strong class="block text-gray-800 mb-1">المراجعة الخاصة بالإملاء</strong>
+          <a href="https://www.youtube.com/live/kYc8fFuJOuE?si=pD2lrcUDb3wjhNXe" target="_blank"
+             class="inline-flex items-center mt-1 text-blue-600 font-semibold hover:text-blue-800 transition">
+            <i class="fas fa-play ml-1 text-sm"></i>
+            <span>مشاهدة الدرس</span>
+          </a>
+        </li>
+      </ol>
+    </div>
   </div>
-
-  <!-- القسم الثاني -->
-  <div class="bg-white rounded-3xl p-6 card-shadow">
-    <h4 class="text-2xl font-bold text-green-700 mb-6">
-      ✍️ القسم الثاني: التطبيقات الإملائية
-    </h4>
-
-    <ol class="list-decimal pr-6 space-y-6 text-lg text-gray-800">
-
-      <li>
-        <strong>همزة الوصل والقطع – (1)</strong><br>
-        <a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=7uKauU2XgSdgRYY5" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
-
-      <li>
-        <strong>همزة الوصل والقطع – (2)</strong><br>
-        <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
-
-      <li>
-        <strong>إثبات همزة (ابن) والفاصلة</strong><br>
-        <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
-
-      <li>
-        <strong>المراجعة الخاصة بالإملاء</strong><br>
-        <a href="https://www.youtube.com/live/kYc8fFuJOuE?si=pD2lrcUDb3wjhNXe" target="_blank"
-           class="inline-block mt-1 text-blue-600 font-semibold hover:underline">
-          ▶ مشاهدة الدرس
-        </a>
-      </li>
-
-    </ol>
-  </div>
-
 </section>
 
-
 <!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-10 text-center">
-  <p class="text-lg font-semibold">الأستاذ خليل البلوشي</p>
-  <p class="text-gray-300 mt-2">
-    شروحات منهج اللغة العربية للصف الخامس الأساسي
-  </p>
+<footer class="bg-gray-800 text-white py-10 text-center mt-8">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+      <div class="mb-6 md:mb-0">
+        <p class="text-xl font-semibold">
+          <i class="fas fa-chalkboard-teacher ml-2"></i>
+          الأستاذ خليل البلوشي
+        </p>
+        <p class="text-gray-300 mt-2">
+          شروحات منهج اللغة العربية للصف الخامس الأساسي
+        </p>
+      </div>
+      
+      <div class="text-gray-300">
+        <p class="mb-2">
+          <i class="fas fa-calendar-check ml-1"></i>
+          الفصل الدراسي الأول - 2024
+        </p>
+        <p>
+          <i class="fas fa-graduation-cap ml-1"></i>
+          جميع الحقوق محفوظة
+        </p>
+      </div>
+    </div>
+    
+    <div class="mt-8 pt-6 border-t border-gray-700">
+      <p class="text-sm text-gray-400">
+        تم تصميم هذا الموقع لتسهيل الوصول إلى الشروحات التعليمية لطلاب الصف الخامس
+      </p>
+    </div>
+  </div>
 </footer>
 
 </body>
