@@ -3,612 +3,559 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>شروحات الصف الخامس – الأستاذ خليل البلوشي</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <title>منصة لغتي – الأستاذ خليل البلوشي</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@300;400;500;600;700;800;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            arabic: ['Tajawal', 'sans-serif'],
-          },
-          colors: {
-            brand: {
-              50: '#f0f4ff',
-              100: '#e0e9ff',
-              200: '#c7d6fe',
-              300: '#a5b8fc',
-              400: '#818ff8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81',
-            },
-            accent: {
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-            }
-          },
-          animation: {
-            'float': 'float 6s ease-in-out infinite',
-            'glow': 'glow 2s ease-in-out infinite alternate',
-            'slide-up': 'slideUp 0.6s ease-out',
-          },
-          keyframes: {
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-20px)' },
-            },
-            glow: {
-              '0%': { boxShadow: '0 0 20px rgba(99, 102, 241, 0.3)' },
-              '100%': { boxShadow: '0 0 40px rgba(99, 102, 241, 0.6)' },
-            },
-            slideUp: {
-              '0%': { opacity: '0', transform: 'translateY(30px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          }
-        }
-      }
-    }
-  </script>
-
   <style>
-    * { font-family: 'Tajawal', sans-serif; }
-    
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: #f1f5f9; }
-    ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 10px; }
-    ::-webkit-scrollbar-thumb:hover { background: #4f46e5; }
-    
-    .glass {
-      background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+    :root {
+      --ink: #0f1117;
+      --gold: #c9932a;
+      --gold-light: #e8b84b;
+      --cream: #faf7f2;
+      --emerald: #1a7a5e;
+      --emerald-light: #27b589;
+      --indigo: #2d3a8c;
+      --indigo-light: #4f63d2;
+      --warm: #f5ede0;
+      --border: rgba(201,147,42,0.2);
     }
-    
-    .gradient-text {
-      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Kufi Arabic', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
     }
-    
-    .hero-bg {
-      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 30%, #4338ca 60%, #6366f1 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero-bg::before {
+
+    /* ─── BACKGROUND PATTERN ─── */
+    body::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(201,147,42,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(45,58,140,0.06) 0%, transparent 50%),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9932a' fill-opacity='0.04'%3E%3Cpath d='M40 0L80 40L40 80L0 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
     }
-    
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,247,242,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
     }
-    .card-hover:hover {
-      transform: translateY(-12px) scale(1.02);
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    
-    .lesson-link {
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo {
+      width: 42px; height: 42px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 16px rgba(201,147,42,0.3);
+    }
+    .nav-logo i { color: white; font-size: 18px; }
+    .nav-title { font-size: 15px; font-weight: 700; color: var(--ink); }
+    .nav-sub { font-size: 11px; color: #888; margin-top: 1px; }
+
+    .nav-links { display: flex; gap: 8px; }
+    .nav-links a {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--warm);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink);
+      text-decoration: none;
+      transition: all 0.25s;
+      font-size: 15px;
+    }
+    .nav-links a:hover {
+      background: var(--gold);
+      color: white;
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
       position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
+      z-index: 1;
+      padding: 140px 24px 80px;
+      text-align: center;
     }
-    .lesson-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.1), transparent);
-      transition: right 0.5s ease;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--warm);
+      border: 1px solid var(--border);
+      padding: 8px 20px;
+      border-radius: 100px;
+      font-size: 13px;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 36px;
+      animation: fadeDown 0.6s ease both;
     }
-    .lesson-link:hover::before {
-      right: 100%;
-    }
-    
-    .shape {
-      position: absolute;
+    .dot-pulse {
+      width: 8px; height: 8px;
+      background: var(--emerald-light);
       border-radius: 50%;
-      filter: blur(60px);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform: scale(1); }
+      50% { opacity:0.5; transform: scale(0.8); }
+    }
+    @keyframes fadeDown {
+      from { opacity:0; transform: translateY(-20px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity:0; transform: translateY(30px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+
+    .hero-title {
+      font-family: 'Amiri', serif;
+      font-size: clamp(42px, 8vw, 80px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      animation: fadeDown 0.7s 0.1s ease both;
+    }
+    .hero-title span {
+      color: var(--gold);
+      position: relative;
+    }
+    .hero-title span::after {
+      content: '';
+      position: absolute;
+      bottom: 4px; right: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      border-radius: 2px;
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 2.5vw, 20px);
+      color: #666;
+      margin-bottom: 48px;
+      animation: fadeDown 0.7s 0.2s ease both;
+    }
+
+    .teacher-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: white;
+      border: 1px solid var(--border);
+      padding: 16px 28px;
+      border-radius: 20px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+      margin-bottom: 72px;
+      animation: fadeDown 0.7s 0.3s ease both;
+    }
+    .teacher-avatar {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .teacher-avatar i { color: white; font-size: 22px; }
+    .teacher-info { text-align: right; }
+    .teacher-info small { font-size: 11px; color: #999; display: block; }
+    .teacher-info strong { font-size: 17px; font-weight: 700; }
+
+    /* ─── SECTIONS GRID ─── */
+    .sections {
+      position: relative; z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+
+    .section-card {
+      position: relative;
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid rgba(0,0,0,0.06);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: flex;
+      flex-direction: column;
+    }
+    .section-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+    }
+
+    .card-header {
+      padding: 36px 28px 28px;
+      position: relative;
+    }
+    .card-header-1 {
+      background: linear-gradient(135deg, #1a3a8c 0%, #2d5be3 100%);
+    }
+    .card-header-2 {
+      background: linear-gradient(135deg, #0f5c44 0%, #1a9e74 100%);
+    }
+
+    .card-icon-wrap {
+      width: 72px; height: 72px;
+      background: rgba(255,255,255,0.18);
+      border-radius: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .card-icon-wrap i { font-size: 30px; color: white; }
+
+    .card-season {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+    .card-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* decorative arc */
+    .card-arc {
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+    }
+
+    .card-body {
+      padding: 24px 28px;
+      flex-grow: 1;
+    }
+    .card-lessons {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .card-lessons li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: #555;
+    }
+    .lesson-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-blue { background: var(--indigo-light); }
+    .dot-green { background: var(--emerald-light); }
+
+    .card-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.25s;
+    }
+    .cta-1 {
+      background: #eef1fb;
+      color: var(--indigo);
+    }
+    .cta-2 {
+      background: #eaf7f2;
+      color: var(--emerald);
+    }
+    .section-card:hover .cta-1 { background: var(--indigo); color: white; }
+    .section-card:hover .cta-2 { background: var(--emerald); color: white; }
+
+    /* ─── STATS ─── */
+    .stats-row {
+      position: relative; z-index: 1;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      text-align: center;
+    }
+    .stat-icon { font-size: 28px; margin-bottom: 10px; }
+    .stat-num { font-size: 28px; font-weight: 900; color: var(--ink); }
+    .stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+
+    /* ─── DIVIDER ─── */
+    .ornament {
+      text-align: center;
+      position: relative; z-index: 1;
+      margin: 0 auto 56px;
+      font-size: 24px;
+      color: var(--gold);
+      letter-spacing: 12px;
       opacity: 0.5;
     }
-    
+
+    /* ─── FOOTER ─── */
+    footer {
+      position: relative; z-index: 1;
+      background: var(--ink);
+      color: white;
+      padding: 48px 24px 32px;
+    }
+    .footer-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 32px;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .footer-brand h4 {
+      font-family: 'Amiri', serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .footer-brand p { font-size: 13px; color: #888; }
+    .footer-gold { color: var(--gold-light); }
+
+    .footer-links { display: flex; gap: 10px; }
+    .footer-link {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: #aaa;
+      text-decoration: none;
+      transition: all 0.25s;
+      font-size: 17px;
+    }
+    .footer-link:hover { background: var(--gold); color: white; border-color: var(--gold); }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin: 0 0 24px;
+    }
+    .footer-copy {
+      text-align: center;
+      font-size: 12px;
+      color: #555;
+    }
+
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
-      .video-grid { grid-template-columns: 1fr; }
-    }
-    @media (min-width: 641px) and (max-width: 1024px) {
-      .video-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (min-width: 1025px) {
-      .video-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    
-    @media (max-width: 768px) {
-      .touch-target {
-        min-height: 48px;
-        padding: 12px 16px;
-      }
+      .sections { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr; }
+      .hero { padding: 120px 20px 60px; }
+      .teacher-card { flex-direction: column; text-align: center; }
+      .teacher-info { text-align: center; }
+      .footer-top { flex-direction: column; align-items: center; text-align: center; }
+      .card-body { padding: 20px; }
+      .card-header { padding: 28px 20px 20px; }
     }
   </style>
 </head>
+<body>
 
-<body class="bg-gradient-to-br from-slate-50 via-white to-slate-100 text-slate-800 leading-relaxed min-h-screen">
-
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 right-0 z-50 glass border-b border-white/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16 sm:h-20">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-brand-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg">
-            <i class="fas fa-feather-alt text-white text-lg sm:text-xl"></i>
-          </div>
-          <div class="hidden sm:block">
-            <h1 class="font-bold text-slate-800 text-sm sm:text-base">الأستاذ خليل البلوشي</h1>
-            <p class="text-xs text-slate-500">منصة تعليم اللغة العربية</p>
-          </div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <div class="nav-logo"><i class="fas fa-feather-alt"></i></div>
+        <div>
+          <div class="nav-title">منصة لغتي</div>
+          <div class="nav-sub">اللغة العربية – الصف الخامس</div>
         </div>
-        
-        <div class="flex items-center gap-2 sm:gap-4">
-          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" 
-             class="w-10 h-10 sm:w-11 sm:h-11 bg-red-500/10 hover:bg-red-500 rounded-xl flex items-center justify-center text-red-500 hover:text-white transition-all duration-300">
-            <i class="fab fa-youtube text-lg"></i>
-          </a>
-          <a href="https://x.com/OMK811" target="_blank" 
-             class="w-10 h-10 sm:w-11 sm:h-11 bg-slate-800/10 hover:bg-slate-800 rounded-xl flex items-center justify-center text-slate-800 hover:text-white transition-all duration-300">
-            <i class="fab fa-x-twitter text-lg"></i>
-          </a>
-        </div>
+      </a>
+      <div class="nav-links">
+        <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" title="يوتيوب">
+          <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://x.com/OMK811" target="_blank" title="تويتر X">
+          <i class="fab fa-x-twitter"></i>
+        </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero-bg text-white pt-28 sm:pt-32 md:pt-40 pb-24 sm:pb-32 md:pb-40 px-4 relative">
-    <div class="shape w-64 sm:w-96 h-64 sm:h-96 bg-purple-500 top-0 right-0 -mr-32 sm:-mr-48 -mt-32 sm:-mt-48 animate-float"></div>
-    <div class="shape w-48 sm:w-72 h-48 sm:h-72 bg-blue-400 bottom-0 left-0 -ml-24 sm:-ml-36 -mb-24 sm:-mb-36 animate-float" style="animation-delay: -3s;"></div>
-    <div class="shape w-32 sm:w-48 h-32 sm:h-48 bg-pink-400 top-1/2 left-1/4 animate-float" style="animation-delay: -1.5s;"></div>
-
-    <div class="max-w-5xl mx-auto text-center relative z-10">
-      <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm mb-6 sm:mb-8 border border-white/20 animate-slide-up">
-        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-        <span>العام الدراسي 2026/2025</span>
-        <i class="fas fa-star text-yellow-400"></i>
-      </div>
-
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 leading-tight animate-slide-up" style="animation-delay: 0.1s;">
-        منصة لغتي
-        <span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-l from-yellow-300 via-amber-300 to-orange-300">
-          للشروحات المرئية-اللغة العربية
-        </span>
-      </h1>
-
-      <p class="text-base sm:text-lg md:text-xl lg:text-2xl opacity-90 mb-8 sm:mb-10 max-w-2xl mx-auto px-4 animate-slide-up" style="animation-delay: 0.2s;">
-        للصف الخامس الأساسي - رحلتكم نحو التميز والإبداع اللغوي
-      </p>
-
-      <div class="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/10 backdrop-blur-xl p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/20 animate-slide-up animate-glow" style="animation-delay: 0.3s;">
-        <div class="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-xl">
-          <i class="fas fa-chalkboard-teacher text-white text-2xl sm:text-3xl"></i>
-        </div>
-        <div class="text-center sm:text-right">
-          <p class="text-xs sm:text-sm opacity-70 mb-1">معلمكم</p>
-          <h2 class="text-xl sm:text-2xl font-bold">الأستاذ خليل البلوشي</h2>
-        </div>
-      </div>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-badge">
+      <div class="dot-pulse"></div>
+      العام الدراسي 2025 / 2026
+      <i class="fas fa-star" style="color:var(--gold);font-size:11px;"></i>
     </div>
 
-    <div class="absolute bottom-0 left-0 right-0">
-      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-        <path d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="url(#gradient)"/>
-        <defs>
-          <linearGradient id="gradient" x1="0" y1="0" x2="1440" y2="0">
-            <stop offset="0%" stop-color="#f8fafc"/>
-            <stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-        </defs>
-      </svg>
+    <h1 class="hero-title">
+      منصة <span>لغتي</span>
+    </h1>
+    <p class="hero-sub">للشروحات المرئية في اللغة العربية · الصف الخامس الأساسي</p>
+
+    <div class="teacher-card">
+      <div class="teacher-avatar"><i class="fas fa-chalkboard-teacher"></i></div>
+      <div class="teacher-info">
+        <small>معلمكم</small>
+        <strong>الأستاذ خليل البلوشي</strong>
+      </div>
     </div>
   </header>
 
-  <!-- Welcome Message -->
-  <section class="max-w-4xl mx-auto px-4 -mt-8 sm:-mt-12 relative z-20 mb-12 sm:mb-16">
-    <div class="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-white/50">
-      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-        <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-          <i class="fas fa-seedling text-white text-xl sm:text-2xl"></i>
+  <!-- STATS -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-icon">🎓</div>
+      <div class="stat-num">11+</div>
+      <div class="stat-label">درس مرئي</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">📚</div>
+      <div class="stat-num">٢</div>
+      <div class="stat-label">فصل دراسي</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">✨</div>
+      <div class="stat-num">٥</div>
+      <div class="stat-label">وحدات تعليمية</div>
+    </div>
+  </div>
+
+  <div class="ornament">❧ ✦ ❧</div>
+
+  <!-- SECTIONS -->
+  <div class="sections">
+
+    <!-- فصل أول -->
+    <a href="sem1.html" class="section-card">
+      <div class="card-header card-header-1">
+        <div class="card-icon-wrap">
+          <i class="fas fa-moon"></i>
         </div>
-        <div class="text-center sm:text-right">
-          <p class="text-lg sm:text-xl text-slate-600 mb-2 leading-relaxed">
-            "مرحباً بكم أعزائي الطلاب، هنا تجدون طريقكم لإتقان لغة الضاد"
-          </p>
-          <p class="text-sm sm:text-base font-bold text-brand-600">
-            نسأل الله لأبنائنا الطلبة التوفيق والنجاح المستمر 🌟
-          </p>
+        <div class="card-season">الفصل الدراسي · الأول</div>
+        <div class="card-title">الفصل الأول</div>
+        <div class="card-desc">نحو وصرف · إملاء وترقيم · مراجعة شاملة</div>
+        <svg class="card-arc" viewBox="0 0 400 40" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 40 Q200 0 400 40 Z"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <ul class="card-lessons">
+          <li><span class="lesson-dot dot-blue"></span>الجملة الفعلية – الفاعل – المفعول به</li>
+          <li><span class="lesson-dot dot-blue"></span>الجملة الاسمية – حروف الجر</li>
+          <li><span class="lesson-dot dot-blue"></span>الإعراب والبناء</li>
+          <li><span class="lesson-dot dot-blue"></span>همزة الوصل والقطع</li>
+          <li><span class="lesson-dot dot-blue"></span>مراجعة شاملة نهائية</li>
+        </ul>
+        <div class="card-cta cta-1">
+          <span>استعرض دروس الفصل الأول</span>
+          <i class="fas fa-arrow-left"></i>
         </div>
       </div>
-    </div>
-  </section>
+    </a>
 
-  <!-- Main Content -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 sm:pb-24">
-    
-    <!-- Section Title -->
-    <div class="text-center mb-10 sm:mb-14">
-      <span class="inline-block bg-brand-100 text-brand-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-4">
-        الفصل الدراسي الأول
-      </span>
-      <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900">
-        <i class="fas fa-graduation-cap text-brand-500 ml-2 sm:ml-3"></i>
-        دروس المنهج
-      </h2>
-    </div>
-
-    <!-- Cards Grid -->
-    <div class="video-grid grid gap-6 sm:gap-8">
-      
-      <!-- Card 1: المراجعة -->
-      <div class="card-hover bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col">
-        <div class="bg-gradient-to-l from-blue-500 to-blue-600 p-5 sm:p-6">
-          <div class="flex items-center gap-3 sm:gap-4">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center">
-              <i class="fas fa-book-reader text-white text-xl sm:text-2xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white">المراجعة الكاملة</h3>
-              <p class="text-blue-100 text-xs sm:text-sm">4 مواد تعليمية</p>
-            </div>
-          </div>
+    <!-- فصل ثاني -->
+    <a href="sem2.html" class="section-card">
+      <div class="card-header card-header-2">
+        <div class="card-icon-wrap">
+          <i class="fas fa-sun"></i>
         </div>
-        
-        <div class="p-5 sm:p-6 flex-grow">
-          <p class="text-slate-500 text-sm sm:text-base mb-5 sm:mb-6">تغطية شاملة لكل ما تضمنه المنهج من مهارات وقواعد.</p>
-          
-          <a href="https://www.youtube.com/live/WMa5roukbis?si=HRJ9BXinpb7hqf7l" target="_blank" 
-             class="block bg-gradient-to-l from-blue-50 to-indigo-50 p-4 rounded-xl sm:rounded-2xl border-2 border-blue-200 hover:border-blue-400 transition-all mb-4 touch-target">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-play text-white"></i>
-              </div>
-              <div class="flex-grow min-w-0">
-                <span class="text-[10px] sm:text-xs font-bold bg-blue-600 text-white px-2 py-0.5 rounded mb-1 inline-block">الأهم</span>
-                <p class="font-bold text-slate-800 text-sm sm:text-base truncate">المراجعة الشاملة النهائية</p>
-              </div>
-              <i class="fas fa-external-link-alt text-blue-400 text-sm hidden sm:block"></i>
-            </div>
+        <div class="card-season">الفصل الدراسي · الثاني</div>
+        <div class="card-title">الفصل الثاني</div>
+        <div class="card-desc">كان وأخواتها · إن وأخواتها · علامات الترقيم</div>
+        <svg class="card-arc" viewBox="0 0 400 40" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 40 Q200 0 400 40 Z"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <ul class="card-lessons">
+          <li><span class="lesson-dot dot-green"></span>كان وأخواتها (جزآن)</li>
+          <li><span class="lesson-dot dot-green"></span>إن وأخواتها – قريباً</li>
+          <li><span class="lesson-dot dot-green"></span>الفاصلة المنقوطة</li>
+          <li><span class="lesson-dot dot-green"></span>الألف في آخر الأفعال – قريباً</li>
+          <li><span class="lesson-dot dot-green"></span>علامة التنصيص – قريباً</li>
+        </ul>
+        <div class="card-cta cta-2">
+          <span>استعرض دروس الفصل الثاني</span>
+          <i class="fas fa-arrow-left"></i>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h4>الأستاذ <span class="footer-gold">خليل البلوشي</span></h4>
+          <p>معلم اللغة العربية – مدرسة سعد بن معاذ للتعليم الأساسي – سلطنة عُمان</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" class="footer-link">
+            <i class="fab fa-youtube"></i>
           </a>
-          
-          <div class="space-y-2 sm:space-y-3">
-            <a href="https://www.youtube.com/live/7GhZHF2wbmY?si=MgRPdeTLQ0N6aBu3" target="_blank" 
-               class="lesson-link flex items-center gap-3 p-3 sm:p-4 rounded-xl hover:bg-slate-50 transition touch-target">
-              <i class="far fa-play-circle text-blue-500 text-lg sm:text-xl"></i>
-              <span class="font-medium text-slate-700 text-sm sm:text-base">مراجعة النحو الخاصة</span>
-            </a>
-            <a href="https://www.youtube.com/live/kYc8fFuJOuE?si=pD2lrcUDb3wjhNXe" target="_blank" 
-               class="lesson-link flex items-center gap-3 p-3 sm:p-4 rounded-xl hover:bg-slate-50 transition touch-target">
-              <i class="far fa-play-circle text-green-500 text-lg sm:text-xl"></i>
-              <span class="font-medium text-slate-700 text-sm sm:text-base">مراجعة الإملاء الخاصة</span>
-            </a>
-            <a href="https://youtu.be/jGNuKssZCeQ?si=PAka9UKrVPkYbCtt" target="_blank" 
-               class="lesson-link flex items-center gap-3 p-3 sm:p-4 rounded-xl hover:bg-slate-50 transition touch-target">
-              <i class="far fa-play-circle text-purple-500 text-lg sm:text-xl"></i>
-              <span class="font-medium text-slate-700 text-sm sm:text-base">مراجعة النحو والإملاء</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2: النحو والصرف -->
-      <div class="card-hover bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col">
-        <div class="bg-gradient-to-l from-purple-500 to-purple-600 p-5 sm:p-6">
-          <div class="flex items-center gap-3 sm:gap-4">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center">
-              <i class="fas fa-pen-fancy text-white text-xl sm:text-2xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white">النحو والصرف</h3>
-              <p class="text-purple-100 text-xs sm:text-sm">8 دروس مرئية</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="p-5 sm:p-6 flex-grow">
-          <p class="text-slate-500 text-sm sm:text-base mb-5 sm:mb-6">قواعد الجملة، الإعراب، والبناء بأسلوب مبسط.</p>
-          
-          <div class="grid grid-cols-1 gap-2 sm:gap-3">
-            <a href="https://www.youtube.com/live/QJ62TF47Ukk?si=EwH0ltGD8ti9Mlud" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">الجملة الفعلية (أ)</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://youtu.be/A5JkbWfmwUA?si=2obMM7sPFY87Y98s" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">الفاعل</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://youtu.be/Zu4DKqXsPIc?si=Vq76YwsCUaRDHvrt" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">المفعول به</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://www.youtube.com/live/fzr_J3GIfKg?si=fk6ceXnogSRKwCP6" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">الجملة الاسمية (أ)</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://youtu.be/h-DwEmAd0rc?si=AeUGRYXBC8MqId-t" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">الجملة الاسمية (ب)</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://youtu.be/XkxKmSI6mws?si=WI7kd2lQelf34jIb" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">حروف الجر وشبه الجملة</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://www.youtube.com/live/RxTRJ7q659w?si=L2cMl6JKlzZBtrPy" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">الإعراب والبناء (أ)</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-            <a href="https://youtu.be/16Np_J7Ij8w?si=BXlItsIwLQnOWNKj" target="_blank" 
-               class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-purple-500 hover:text-white transition group touch-target">
-              <span class="font-medium text-sm sm:text-base">الإعراب والبناء (ب)</span>
-              <i class="fas fa-play text-purple-400 group-hover:text-white text-xs"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3: الإملاء والترقيم -->
-      <div class="card-hover bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col">
-        <div class="bg-gradient-to-l from-emerald-500 to-emerald-600 p-5 sm:p-6">
-          <div class="flex items-center gap-3 sm:gap-4">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center">
-              <i class="fas fa-spell-check text-white text-xl sm:text-2xl"></i>
-            </div>
-            <div>
-              <h3 class="text-xl sm:text-2xl font-bold text-white">الإملاء والترقيم</h3>
-              <p class="text-emerald-100 text-xs sm:text-sm">3 مواد تعليمية</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="p-5 sm:p-6 flex-grow">
-          <p class="text-slate-500 text-sm sm:text-base mb-5 sm:mb-6">قواعد الكتابة الصحيحة لإتقان الخط والتعبير.</p>
-          
-          <div class="bg-gradient-to-l from-emerald-50 to-teal-50 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-emerald-200 mb-4">
-            <div class="flex items-start gap-3 sm:gap-4">
-              <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                <i class="fas fa-quote-right text-white text-sm sm:text-base"></i>
-              </div>
-              <div class="flex-grow">
-                <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-3">همزة الوصل والقطع</h4>
-                <div class="flex flex-wrap gap-2">
-                  <a href="https://www.youtube.com/live/LaAF8QKoGIQ?si=7uKauU2XgSdgRYY5" target="_blank" 
-                     class="inline-flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-emerald-700 hover:bg-emerald-500 hover:text-white transition border border-emerald-200 touch-target">
-                    <i class="fas fa-play text-[10px]"></i> فيديو 1
-                  </a>
-                  <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank" 
-                     class="inline-flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-emerald-700 hover:bg-emerald-500 hover:text-white transition border border-emerald-200 touch-target">
-                    <i class="fas fa-play text-[10px]"></i> فيديو 2
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <a href="https://youtu.be/5ZAoUaVITzc?si=nsaogpiaoC4vP-61" target="_blank" 
-             class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-emerald-500 hover:text-white transition group touch-target">
-            <div class="flex items-center gap-3">
-              <i class="fas fa-pen-alt text-emerald-500 group-hover:text-white"></i>
-              <span class="font-medium text-sm sm:text-base">همزة (ابن) والفاصلة</span>
-            </div>
-            <i class="fas fa-chevron-left text-slate-300 group-hover:text-white text-xs"></i>
+          <a href="https://x.com/OMK811" target="_blank" class="footer-link">
+            <i class="fab fa-x-twitter"></i>
           </a>
         </div>
       </div>
-
-    </div>
-
-    <!-- Second Semester Section -->
-    <div class="mt-12 sm:mt-16 md:mt-20">
-      <div class="text-center mb-10 sm:mb-14">
-        <span class="inline-block bg-emerald-100 text-emerald-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold mb-4">
-          <i class="fas fa-rocket ml-2"></i>
-          الفصل الدراسي الثاني
-        </span>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900">
-          <i class="fas fa-book-open text-emerald-500 ml-2 sm:ml-3"></i>
-          دروس الفصل الثاني
-        </h2>
-      </div>
-
-      <div class="video-grid grid gap-6 sm:gap-8">
-        
-        <!-- Card 1: النحو والصرف - الفصل الثاني -->
-        <div class="card-hover bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col">
-          <div class="bg-gradient-to-l from-indigo-500 to-indigo-600 p-5 sm:p-6">
-            <div class="flex items-center gap-3 sm:gap-4">
-              <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center">
-                <i class="fas fa-book text-white text-xl sm:text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl sm:text-2xl font-bold text-white">النحو والصرف</h3>
-                <p class="text-indigo-100 text-xs sm:text-sm">2 موضوع نحوي</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="p-5 sm:p-6 flex-grow">
-            <p class="text-slate-500 text-sm sm:text-base mb-5 sm:mb-6">دراسة الأفعال الناسخة والحروف الناسخة وعملها في الجملة.</p>
-            
-            <div class="bg-gradient-to-l from-indigo-50 to-blue-50 p-4 sm:p-5 rounded-xl sm:rounded-2xl border border-indigo-200 mb-4">
-              <div class="flex items-start gap-3 sm:gap-4">
-                <div class="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-500 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <i class="fas fa-exchange-alt text-white text-sm sm:text-base"></i>
-                </div>
-                <div class="flex-grow">
-                  <h4 class="font-bold text-slate-800 text-sm sm:text-base mb-3">كان وأخواتها</h4>
-                  <div class="flex flex-wrap gap-2">
-                    <a href="https://www.youtube.com/live/X3lKsI8NvSE?si=OBRii88zfdAPfcvO" target="_blank" 
-                       class="inline-flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-indigo-700 hover:bg-indigo-500 hover:text-white transition border border-indigo-200 touch-target">
-                      <i class="fas fa-play text-[10px]"></i> الجزء الأول
-                    </a>
-                    <a href="https://youtu.be/5krMCd2B9Zs?si=H6brxiednq-vv_Lx" target="_blank" 
-                       class="inline-flex items-center gap-2 bg-white px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium text-indigo-700 hover:bg-indigo-500 hover:text-white transition border border-indigo-200 touch-target">
-                      <i class="fas fa-play text-[10px]"></i> الجزء الثاني
-                    </a>
-                  </div>
-                  <p class="text-xs text-slate-500 mt-2">التعريف بكان وأخواتها - عملها - الإعراب والتطبيقات</p>
-                </div>
-              </div>
-            </div>
-            
-            <div class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl transition group opacity-60 cursor-not-allowed">
-              <div class="flex items-center gap-3">
-                <i class="fas fa-lock text-slate-400"></i>
-                <div>
-                  <span class="font-medium text-slate-500 text-sm sm:text-base block">إن وأخواتها</span>
-                  <span class="text-xs text-slate-400">قريباً</span>
-                </div>
-              </div>
-              <i class="fas fa-clock text-slate-300 text-xs"></i>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2: الإملاء والترقيم - الفصل الثاني -->
-        <div class="card-hover bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-slate-100 overflow-hidden flex flex-col">
-          <div class="bg-gradient-to-l from-teal-500 to-teal-600 p-5 sm:p-6">
-            <div class="flex items-center gap-3 sm:gap-4">
-              <div class="w-12 h-12 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center">
-                <i class="fas fa-pen-nib text-white text-xl sm:text-2xl"></i>
-              </div>
-              <div>
-                <h3 class="text-xl sm:text-2xl font-bold text-white">الإملاء والترقيم</h3>
-                <p class="text-teal-100 text-xs sm:text-sm">3 موضوعات إملائية</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="p-5 sm:p-6 flex-grow">
-            <p class="text-slate-500 text-sm sm:text-base mb-5 sm:mb-6">قواعد الإملاء وعلامات الترقيم لإتقان الكتابة الصحيحة.</p>
-            
-            <div class="space-y-3">
-
-              <!-- ✅ الفاصلة المنقوطة - رابط نشط -->
-              <a href="https://www.youtube.com/live/gmks_dyu1ZA?si=8P1DFPQ8I5O238Dj" target="_blank"
-                 class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-teal-500 hover:text-white transition group touch-target">
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-ellipsis-v text-teal-500 group-hover:text-white"></i>
-                  <span class="font-medium text-sm sm:text-base">الفاصلة المنقوطة</span>
-                </div>
-                <i class="fas fa-play text-teal-400 group-hover:text-white text-xs"></i>
-              </a>
-              
-              <!-- الألف في آخر الأفعال -->
-              <div class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl transition group opacity-60 cursor-not-allowed">
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-font text-slate-400"></i>
-                  <div>
-                    <span class="font-medium text-slate-500 text-sm sm:text-base block">الألف في آخر الأفعال</span>
-                    <span class="text-xs text-slate-400">قريباً</span>
-                  </div>
-                </div>
-                <i class="fas fa-clock text-slate-300 text-xs"></i>
-              </div>
-              
-              <!-- علامة التنصيص -->
-              <div class="lesson-link flex items-center justify-between p-3 sm:p-4 bg-slate-50 rounded-xl transition group opacity-60 cursor-not-allowed">
-                <div class="flex items-center gap-3">
-                  <i class="fas fa-quote-left text-slate-400"></i>
-                  <div>
-                    <span class="font-medium text-slate-500 text-sm sm:text-base block">علامة التنصيص</span>
-                    <span class="text-xs text-slate-400">قريباً</span>
-                  </div>
-                </div>
-                <i class="fas fa-clock text-slate-300 text-xs"></i>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3: Coming Soon Placeholder -->
-        <div class="card-hover bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden flex flex-col text-white relative">
-          <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 right-0 w-48 h-48 bg-purple-500 rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-0 left-0 w-32 h-32 bg-blue-500 rounded-full filter blur-3xl"></div>
-          </div>
-          
-          <div class="p-6 sm:p-8 flex-grow flex flex-col items-center justify-center text-center relative z-10">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/10 backdrop-blur rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-6">
-              <i class="fas fa-hourglass-half text-3xl sm:text-4xl text-emerald-400"></i>
-            </div>
-            
-            <h3 class="text-xl sm:text-2xl md:text-3xl font-black mb-3">المزيد قريباً</h3>
-            <p class="text-slate-400 text-sm sm:text-base max-w-xs">
-              نعمل على إضافة المزيد من الدروس والشروحات التفاعلية
-            </p>
-            
-            <div class="mt-6 sm:mt-8 inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-400 px-4 py-2 rounded-full text-xs sm:text-sm font-bold">
-              <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-              <span>تابعونا للتحديثات</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-white border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div class="flex flex-col sm:flex-row justify-between items-center gap-6 sm:gap-8">
-        
-        <div class="text-center sm:text-right">
-          <div class="flex items-center justify-center sm:justify-start gap-3 mb-2">
-            <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-purple-600 rounded-xl flex items-center justify-center">
-              <i class="fas fa-feather-alt text-white"></i>
-            </div>
-            <h4 class="text-xl sm:text-2xl font-black text-slate-900">الأستاذ خليل البلوشي</h4>
-          </div>
-          <p class="text-slate-500 text-sm sm:text-base">متخصص في تعليم اللغة العربية لجيل واعد ومبدع</p>
-        </div>
-        
-        <div class="flex gap-3 sm:gap-4">
-          <a href="https://www.youtube.com/@teacherKhalil811" target="_blank" 
-             class="w-12 h-12 sm:w-14 sm:h-14 bg-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center text-slate-600 hover:bg-red-500 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg">
-            <i class="fab fa-youtube text-xl sm:text-2xl"></i>
-          </a>
-          <a href="https://x.com/OMK811" target="_blank" 
-             class="w-12 h-12 sm:w-14 sm:h-14 bg-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center text-slate-600 hover:bg-slate-800 hover:text-white transition-all duration-300 shadow-sm hover:shadow-lg">
-            <i class="fab fa-x-twitter text-xl sm:text-2xl"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="mt-8 pt-6 sm:pt-8 border-t border-slate-100 text-center">
-        <p class="text-slate-400 text-xs sm:text-sm">© جميع الحقوق محفوظة لعام 2025 - الأستاذ خليل البلوشي</p>
-      </div>
+      <hr class="footer-divider">
+      <p class="footer-copy">© 2025 جميع الحقوق محفوظة · منصة لغتي · الأستاذ خليل البلوشي</p>
     </div>
   </footer>
 
